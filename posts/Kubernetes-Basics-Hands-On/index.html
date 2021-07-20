@@ -1,0 +1,195 @@
+<!DOCTYPE html><html lang="en-US" mode="dark" ><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"><meta name="generator" content="Jekyll v4.2.0" /><meta property="og:title" content="Basics of Kubernetes (Hands-On Experience)" /><meta property="og:locale" content="en" /><meta name="description" content="kubectl A command-line tool to access the K8s API Server" /><meta property="og:description" content="kubectl A command-line tool to access the K8s API Server" /><link rel="canonical" href="https://cloufish.github.io/blog/posts/Kubernetes-Basics-Hands-On/" /><meta property="og:url" content="https://cloufish.github.io/blog/posts/Kubernetes-Basics-Hands-On/" /><meta property="og:site_name" content="Cloufish’s Blog" /><meta property="og:type" content="article" /><meta property="article:published_time" content="2021-05-10T07:46:00+02:00" /><meta name="twitter:card" content="summary" /><meta property="twitter:title" content="Basics of Kubernetes (Hands-On Experience)" /><meta name="twitter:site" content="@Cloufisz" /><meta name="google-site-verification" content="google_meta_tag_verification" /> <script type="application/ld+json"> {"description":"kubectl A command-line tool to access the K8s API Server","url":"https://cloufish.github.io/blog/posts/Kubernetes-Basics-Hands-On/","@type":"BlogPosting","headline":"Basics of Kubernetes (Hands-On Experience)","dateModified":"2021-06-11T19:18:37+02:00","datePublished":"2021-05-10T07:46:00+02:00","mainEntityOfPage":{"@type":"WebPage","@id":"https://cloufish.github.io/blog/posts/Kubernetes-Basics-Hands-On/"},"@context":"https://schema.org"}</script><title>Basics of Kubernetes (Hands-On Experience) | Cloufish's Blog</title><link rel="apple-touch-icon" sizes="180x180" href="/blog/assets/img/favicons/apple-touch-icon.png"><link rel="icon" type="image/png" sizes="32x32" href="/blog/assets/img/favicons/favicon-32x32.png"><link rel="icon" type="image/png" sizes="16x16" href="/blog/assets/img/favicons/favicon-16x16.png"><link rel="manifest" href="/blog/assets/img/favicons/site.webmanifest"><link rel="shortcut icon" href="/blog/assets/img/favicons/favicon.ico"><meta name="apple-mobile-web-app-title" content="Cloufish's Blog"><meta name="application-name" content="Cloufish's Blog"><meta name="msapplication-TileColor" content="#da532c"><meta name="msapplication-config" content="/blog/assets/img/favicons/browserconfig.xml"><meta name="theme-color" content="#ffffff"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous"><link rel="dns-prefetch" href="https://fonts.gstatic.com"><link rel="preconnect" href="https://www.google-analytics.com" crossorigin="use-credentials"><link rel="dns-prefetch" href="https://www.google-analytics.com"><link rel="preconnect" href="https://www.googletagmanager.com" crossorigin="anonymous"><link rel="dns-prefetch" href="https://www.googletagmanager.com"><link rel="preconnect" href="https://cdn.jsdelivr.net"><link rel="dns-prefetch" href="https://cdn.jsdelivr.net"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.11.2/css/all.min.css"><link rel="stylesheet" href="/blog/assets/css/style.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/afeld/bootstrap-toc@1.0.1/dist/bootstrap-toc.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/magnific-popup@1.1.0/dist/magnific-popup.min.css"> <script src="https://cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js"></script> <script defer src="https://cdn.jsdelivr.net/combine/npm/popper.js@1.15.0,npm/bootstrap@4/dist/js/bootstrap.min.js"></script> <script async src="https://cdn.jsdelivr.net/combine/npm/lozad/dist/lozad.min.js,npm/magnific-popup@1/dist/jquery.magnific-popup.min.js"></script> <script defer src="/blog/assets/js/dist/post.min.js"></script> <script defer src="/blog/app.js"></script> <script defer src="https://www.googletagmanager.com/gtag/js?id="></script> <script> document.addEventListener("DOMContentLoaded", function(event) { window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', ''); }); </script><body data-spy="scroll" data-target="#toc"><div id="sidebar" class="d-flex flex-column align-items-end"><div class="profile-wrapper text-center"><div id="avatar"> <a href="/blog/" alt="avatar" class="mx-auto"> <img src="/blog/avatar.jpg" alt="avatar" onerror="this.style.display='none'"> </a></div><div class="site-title mt-3"> <a href="/blog/">Cloufish's Blog</a></div><div class="site-subtitle font-italic">My own internet corner :)</div></div><ul class="w-100"><li class="nav-item"> <a href="/blog/" class="nav-link"> <i class="fa-fw fas fa-home ml-xl-3 mr-xl-3 unloaded"></i> <span>HOME</span> </a><li class="nav-item"> <a href="/blog/categories/" class="nav-link"> <i class="fa-fw fas fa-stream ml-xl-3 mr-xl-3 unloaded"></i> <span>CATEGORIES</span> </a><li class="nav-item"> <a href="/blog/tags/" class="nav-link"> <i class="fa-fw fas fa-tags ml-xl-3 mr-xl-3 unloaded"></i> <span>TAGS</span> </a><li class="nav-item"> <a href="/blog/archives/" class="nav-link"> <i class="fa-fw fas fa-archive ml-xl-3 mr-xl-3 unloaded"></i> <span>ARCHIVES</span> </a><li class="nav-item"> <a href="/blog/about/" class="nav-link"> <i class="fa-fw fas fa-info ml-xl-3 mr-xl-3 unloaded"></i> <span>ABOUT</span> </a><li class="nav-item"> <a href="/blog/resources/" class="nav-link"> <i class="fa-fw fas fa-info ml-xl-3 mr-xl-3 unloaded"></i> <span>RESOURCES TO LEARN HACKING</span> </a><li class="nav-item"> <a href="/blog/contribute/" class="nav-link"> <i class="fa-fw fas fa-info ml-xl-3 mr-xl-3 unloaded"></i> <span>HELP ME WITH GITHUB PROJECTS</span> </a></ul><div class="sidebar-bottom mt-auto d-flex flex-wrap justify-content-center"> <a href="https://github.com/Cloufish" aria-label="github" target="_blank" rel="noopener"> <i class="fab fa-github-alt"></i> </a> <a href="https://twitter.com/Cloufisz" aria-label="twitter" target="_blank" rel="noopener"> <i class="fab fa-twitter"></i> </a> <a href=" javascript:location.href = 'mailto:' + ['cloufisz','gmail.com'].join('@')" aria-label="email" > <i class="fas fa-envelope"></i> </a> <a href="/blog/feed.xml" aria-label="rss" > <i class="fas fa-rss"></i> </a></div></div><div id="topbar-wrapper" class="row justify-content-center topbar-down"><div id="topbar" class="col-11 d-flex h-100 align-items-center justify-content-between"> <span id="breadcrumb"> <span> <a href="/blog/"> Posts </a> </span> <span>Basics of Kubernetes (Hands-On Experience)</span> </span> <i id="sidebar-trigger" class="fas fa-bars fa-fw"></i><div id="topbar-title"> Post</div><i id="search-trigger" class="fas fa-search fa-fw"></i> <span id="search-wrapper" class="align-items-center"> <i class="fas fa-search fa-fw"></i> <input class="form-control" id="search-input" type="search" aria-label="search" autocomplete="off" placeholder="Search..."> <i class="fa fa-times-circle fa-fw" id="search-cleaner"></i> </span> <span id="search-cancel" >Cancel</span></div></div><div id="main-wrapper"><div id="main"><div class="row"><div id="post-wrapper" class="col-12 col-lg-11 col-xl-8"><div class="post pl-1 pr-1 pl-sm-2 pr-sm-2 pl-md-4 pr-md-4"><h1 data-toc-skip>Basics of Kubernetes (Hands-On Experience)</h1><div class="post-meta text-muted d-flex flex-column"><div> <span class="semi-bold"> Bartholomew Mokrzycki </span> <span class="timeago " data-toggle="tooltip" data-placement="bottom" title="Mon, May 10, 2021, 7:46 AM +0200" prep="on" > May 10 <i class="unloaded">2021-05-10T07:46:00+02:00</i> </span></div><div> <span> <span class="timeago lastmod" data-toggle="tooltip" data-placement="bottom" title="Fri, Jun 11, 2021, 7:18 PM +0200" prefix="Updated " > Jun 11 <i class="unloaded">2021-06-11T19:18:37+02:00</i> </span> </span> <span class="readtime" data-toggle="tooltip" data-placement="bottom" title="1111 words">6 min</span></div></div><div class="post-content"><h2 id="kubectl">kubectl</h2><p>A command-line tool to access the K8s API Server</p><h3 id="installation">Installation</h3><p><a href="https://kubernetes.io/docs/tasks/tools/">Here are the docs to guide you with installation</a></p><p>On my host machine, I only run <code class="language-plaintext highlighter-rouge">sudo pacman -Syu kubectl</code></p><h3 id="installing-kubernetes-itself">Installing Kubernetes itself</h3><p>We have 2 choices here</p><ul><li>Docker Desktop - Easier one, however, <strong>only Windows and Mac are suppoerted</strong> :/<li>minicube - More difficult than Docker Desktop, but I think It’s better to struggle a bit but get more accurate, command line experience</ul><p>If you want to use <strong>Docker-Desktop</strong> because you’re on Mac or Windows, then to install it head over to <a href="https://www.docker.com/products/docker-desktop">HERE</a> and download .exe file</p><p><strong>minicube</strong> - Head over <a href="https://minikube.sigs.k8s.io/docs/start/">HERE</a> and proceed from their documentation</p><h2 id="managing-pods">Managing Pods</h2><h3 id="process-overview">Process Overview:</h3><ol><li>Build container image out of the app,<li>Store it in the container registry (e.g. Docker Hub)<li>Create Manifest file in <code class="language-plaintext highlighter-rouge">.yml</code> format that would define the Pod’s structure<li>Send it to the K8s API Server</ol><p>We’ll focus on the 3 and 4 step, because we already have containerized apps - by it, I mean even the simplest ones, like <code class="language-plaintext highlighter-rouge">mongodb</code> container — that is also a container app!</p><p>This → <a href="https://github.com/kubernetes/examples">repo</a> contains a lot of more examples to work on with Kubernetes</p><p>I’ll be choosing <code class="language-plaintext highlighter-rouge">Guestbook</code>. And because I’m also a learner just like you, I’ll do everything as described in Kubernetes own <a href="https://kubernetes.io/docs/tutorials/stateless-application/guestbook/">Tutorial/Guide</a> from now on.</p><h2 id="guestbook">Guestbook</h2><h3 id="starting-minikube-cluster">Starting minikube cluster</h3><p>With <code class="language-plaintext highlighter-rouge">minikube start</code></p><p>Then, if we run <code class="language-plaintext highlighter-rouge">kubectl get po -A</code></p><div class="language-plaintext highlighter-rouge"><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+</pre><td class="rouge-code"><pre>NAMESPACE              NAME                                        READY   STATUS    RESTARTS   AGE
+kube-system            coredns-74ff55c5b-87864                     1/1     Running   1          23d
+kube-system            etcd-minikube                               1/1     Running   1          23d
+kube-system            kube-apiserver-minikube                     1/1     Running   1          23d
+kube-system            kube-controller-manager-minikube            1/1     Running   1          23d
+kube-system            kube-proxy-bzqzx                            1/1     Running   1          23d
+kube-system            kube-scheduler-minikube                     1/1     Running   1          23d
+kube-system            storage-provisioner                         1/1     Running   2          23d
+kubernetes-dashboard   dashboard-metrics-scraper-f6647bd8c-6tz59   1/1     Running   0          6m18s
+kubernetes-dashboard   kubernetes-dashboard-968bcb79-2226c         1/1     Running   0          6m18s
+
+</pre></table></code></div></div><p>We’ll see that there are various Kubernetes objects running like the <code class="language-plaintext highlighter-rouge">etcd</code>, <code class="language-plaintext highlighter-rouge">kube-apiserver-minikube</code>, <code class="language-plaintext highlighter-rouge">storage-provisioner</code>.</p><p>Many of them we discussed in previous blog-post related to Kubernetes.</p><p>So as discussed in the kubernetes tutorial We need to create a Manifest of the <strong>MongoDB Deployment Controller</strong></p><div class="language-yml highlighter-rouge"><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+</pre><td class="rouge-code"><pre><span class="na">apiVersion</span><span class="pi">:</span> <span class="s">apps/v1</span>
+<span class="na">kind</span><span class="pi">:</span> <span class="s">Deployment</span>
+<span class="na">metadata</span><span class="pi">:</span>
+  <span class="na">name</span><span class="pi">:</span> <span class="s">mongo</span>
+  <span class="na">labels</span><span class="pi">:</span>
+    <span class="s">app.kubernetes.io/name</span><span class="pi">:</span> <span class="s">mongo</span>
+    <span class="s">app.kubernetes.io/component</span><span class="pi">:</span> <span class="s">backend</span>
+<span class="na">spec</span><span class="pi">:</span>
+  <span class="na">selector</span><span class="pi">:</span>
+    <span class="na">matchLabels</span><span class="pi">:</span>
+      <span class="s">app.kubernetes.io/name</span><span class="pi">:</span> <span class="s">mongo</span>
+      <span class="s">app.kubernetes.io/component</span><span class="pi">:</span> <span class="s">backend</span>
+  <span class="na">replicas</span><span class="pi">:</span> <span class="m">1</span>
+  <span class="na">template</span><span class="pi">:</span>
+    <span class="na">metadata</span><span class="pi">:</span>
+      <span class="na">labels</span><span class="pi">:</span>
+        <span class="s">app.kubernetes.io/name</span><span class="pi">:</span> <span class="s">mongo</span>
+        <span class="s">app.kubernetes.io/component</span><span class="pi">:</span> <span class="s">backend</span>
+    <span class="na">spec</span><span class="pi">:</span>
+      <span class="na">containers</span><span class="pi">:</span>
+      <span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">mongo</span>
+        <span class="na">image</span><span class="pi">:</span> <span class="s">mongo:4.2</span>
+        <span class="na">args</span><span class="pi">:</span>
+          <span class="pi">-</span> <span class="s">--bind_ip</span>
+          <span class="pi">-</span> <span class="s">0.0.0.0</span>
+        <span class="na">resources</span><span class="pi">:</span>
+          <span class="na">requests</span><span class="pi">:</span>
+            <span class="na">cpu</span><span class="pi">:</span> <span class="s">100m</span>
+            <span class="na">memory</span><span class="pi">:</span> <span class="s">100Mi</span>
+        <span class="na">ports</span><span class="pi">:</span>
+        <span class="pi">-</span> <span class="na">containerPort</span><span class="pi">:</span> <span class="m">27017</span>
+
+</pre></table></code></div></div><p><strong>Let’s analyze this file more in depth.</strong> I think It’ll help us write Manifests by ourselves.</p><blockquote><p>1&gt; <code class="language-plaintext highlighter-rouge">apiVersion: apps/v1</code> - That’s easy to deduct, the API we use is from the <strong>apps group</strong>, and we use its v1</p></blockquote><blockquote><p>2&gt;<code class="language-plaintext highlighter-rouge">kind: Deployment</code> - This though is not so intuitive in the first glance, but It specifies the <strong>resource type</strong></p></blockquote><p>With command <code class="language-plaintext highlighter-rouge">kubectl explain --api-version=apps/v1 deployment</code> We can get more info about this resource type</p><div class="language-yml highlighter-rouge"><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+</pre><td class="rouge-code"><pre><span class="na">metadata</span><span class="pi">:</span>
+  <span class="na">name</span><span class="pi">:</span> <span class="s">mongo</span>
+  <span class="na">labels</span><span class="pi">:</span>
+    <span class="s">app.kubernetes.io/name</span><span class="pi">:</span> <span class="s">mongo</span>
+    <span class="s">app.kubernetes.io/component</span><span class="pi">:</span> <span class="s">backend</span>
+</pre></table></code></div></div><p>We see that be assign metadata to this mongo service more specifically <strong>labels</strong> which are the same as <strong>tags</strong> in other concepts,</p><div class="language-yml highlighter-rouge"><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+</pre><td class="rouge-code"><pre><span class="na">spec</span><span class="pi">:</span>
+  <span class="na">selector</span><span class="pi">:</span>
+    <span class="na">matchLabels</span><span class="pi">:</span>
+      <span class="s">app.kubernetes.io/name</span><span class="pi">:</span> <span class="s">mongo</span>
+      <span class="s">app.kubernetes.io/component</span><span class="pi">:</span> <span class="s">backend</span>
+  <span class="na">replicas</span><span class="pi">:</span> <span class="m">1</span>
+  <span class="na">template</span><span class="pi">:</span>
+    <span class="na">metadata</span><span class="pi">:</span>
+      <span class="na">labels</span><span class="pi">:</span>
+        <span class="s">app.kubernetes.io/name</span><span class="pi">:</span> <span class="s">mongo</span>
+        <span class="s">app.kubernetes.io/component</span><span class="pi">:</span> <span class="s">backend</span>
+    <span class="na">spec</span><span class="pi">:</span>
+      <span class="na">containers</span><span class="pi">:</span>
+      <span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">mongo</span>
+        <span class="na">image</span><span class="pi">:</span> <span class="s">mongo:4.2</span>
+        <span class="na">args</span><span class="pi">:</span>
+          <span class="pi">-</span> <span class="s">--bind_ip</span>
+          <span class="pi">-</span> <span class="s">0.0.0.0</span>
+        <span class="na">resources</span><span class="pi">:</span>
+          <span class="na">requests</span><span class="pi">:</span>
+            <span class="na">cpu</span><span class="pi">:</span> <span class="s">100m</span>
+            <span class="na">memory</span><span class="pi">:</span> <span class="s">100Mi</span>
+        <span class="na">ports</span><span class="pi">:</span>
+        <span class="pi">-</span> <span class="na">containerPort</span><span class="pi">:</span> <span class="m">27017</span>
+</pre></table></code></div></div><p>The spec section defines what state we desire for the object and in this scenario there are lots of them, let’s break it down again.</p><div class="language-yml highlighter-rouge"><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+</pre><td class="rouge-code"><pre><span class="na">selector</span><span class="pi">:</span>
+    <span class="na">matchLabels</span><span class="pi">:</span>
+      <span class="s">app.kubernetes.io/name</span><span class="pi">:</span> <span class="s">mongo</span>
+      <span class="s">app.kubernetes.io/component</span><span class="pi">:</span> <span class="s">backend</span>
+</pre></table></code></div></div><p>We specify which Apps/Pods we want it to affect, here we see that we only want these apps which have <code class="language-plaintext highlighter-rouge">mongo</code> and <code class="language-plaintext highlighter-rouge">backend</code> labels.</p><p><code class="language-plaintext highlighter-rouge">replicas: 1</code> - Simple, we want 1 copy of the deployment controller</p><div class="language-yml highlighter-rouge"><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+</pre><td class="rouge-code"><pre><span class="na">template</span><span class="pi">:</span>
+    <span class="na">metadata</span><span class="pi">:</span>
+      <span class="na">labels</span><span class="pi">:</span>
+        <span class="s">app.kubernetes.io/name</span><span class="pi">:</span> <span class="s">mongo</span>
+        <span class="s">app.kubernetes.io/component</span><span class="pi">:</span> <span class="s">backend</span>
+    <span class="na">spec</span><span class="pi">:</span>
+      <span class="na">containers</span><span class="pi">:</span>
+      <span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">mongo</span>
+        <span class="na">image</span><span class="pi">:</span> <span class="s">mongo:4.2</span>
+        <span class="na">args</span><span class="pi">:</span>
+          <span class="pi">-</span> <span class="s">--bind_ip</span>
+          <span class="pi">-</span> <span class="s">0.0.0.0</span>
+        <span class="na">resources</span><span class="pi">:</span>
+          <span class="na">requests</span><span class="pi">:</span>
+            <span class="na">cpu</span><span class="pi">:</span> <span class="s">100m</span>
+            <span class="na">memory</span><span class="pi">:</span> <span class="s">100Mi</span>
+        <span class="na">ports</span><span class="pi">:</span>
+        <span class="pi">-</span> <span class="na">containerPort</span><span class="pi">:</span> <span class="m">27017</span>
+</pre></table></code></div></div><p>But this part is important, because <strong>the replicas are made according to the template</strong>, and it basically tells it to run Kubernetes Pods with defined labels, and use containers with specified image, hardware resources and open port</p><p>Why is <code class="language-plaintext highlighter-rouge">spec</code> object used two times? <strong>The first time we used it to label our Deployment Component</strong>, then the use case is for a <code class="language-plaintext highlighter-rouge">template:</code> for replicas. You will see that with the <strong>Service component</strong> we only use it once</p><p>The <code class="language-plaintext highlighter-rouge">spec</code> object format is not so consistent across other K8s objects, as we read the <a href="https://kubernetes.io/docs/concepts/overview/working-with-objects/kubernetes-objects/">API docs - kubernetes-objects</a></p><blockquote><p>The precise format of the object <code class="language-plaintext highlighter-rouge">spec</code> is different for every Kubernetes object, and contains nested fields specific to that object. The Kubernetes API Reference can help you find the <code class="language-plaintext highlighter-rouge">spec</code> format for all the objects you can create using Kubernetes. For example, the <code class="language-plaintext highlighter-rouge">spec</code> format for a Pod can be found in PodSpec v1 core, and the spec format for a Deployment can be found in DeploymentSpec v1 apps.</p></blockquote><p><strong>Okay, back to deploying our app!!!</strong></p><p>Write the contents to the <code class="language-plaintext highlighter-rouge">deployment.yml</code>, Then execute:</p><p><code class="language-plaintext highlighter-rouge">kubectl apply -f mongo-deployment.yaml</code></p><p>We’ll get the output:</p><div class="language-plaintext highlighter-rouge"><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre><td class="rouge-code"><pre>deployment.apps/mongo created
+</pre></table></code></div></div><p>Then to get the Pod We’ve created run <code class="language-plaintext highlighter-rouge">kubectl get pods</code></p><div class="language-plaintext highlighter-rouge"><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+</pre><td class="rouge-code"><pre>NAME                     READY   STATUS    RESTARTS   AGE
+mongo-75f59d57f4-8kjp2   1/1     Running   0          93s
+</pre></table></code></div></div><p>So our Deployment Controller is running!</p><p>Now Let’s create the <strong>MongoDB Service</strong>, with very similar steps:</p><ol><li>Copying this yml content: ```yml apiVersion: v1 kind: Service metadata: name: mongo labels: app.kubernetes.io/name: mongo app.kubernetes.io/component: backend spec: ports:<ul><li>port: 27017 targetPort: 27017 selector: app.kubernetes.io/name: mongo app.kubernetes.io/component: backend</ul></ol><p>``` into mongo-service.yml file inside your App directory</p><blockquote><p>(Here as you can see we use only <code class="language-plaintext highlighter-rouge">spec</code>.)</p></blockquote><ol><li>Apply it with <code class="language-plaintext highlighter-rouge">kubectl apply -f mongo-service-yml</code></ol><p>And We’ll <strong>do the same</strong> with <strong>Guestbook Frontend Deployment</strong> and <strong>Guestbook Frontend Service</strong> just like the <a href="https://kubernetes.io/docs/tutorials/stateless-application/guestbook/">tutorial</a> says</p><p>And verify if replicas were made with:</p><p><code class="language-plaintext highlighter-rouge">kubectl get pods -l app.kubernetes.io/name=guestbook -l app.kubernetes.io/component=frontend</code></p><p>And If you’ve done everything the docs specified, your WebApp will be running</p><p><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-src="https://imgur.com/LZqCIkl.png" alt="guesbook-frontend" /></p><blockquote><p>I know that there were little to no work from my part, looks like these docs have everything explained, which is amazing!</p></blockquote><h3 id="conclusions-with-guestbook">Conclusions with Guestbook</h3><ul><li>Writing Manifests in <code class="language-plaintext highlighter-rouge">.yml</code> format is essential, that’s basically the main part of configuring the services in K8s. The best way to learn it is of course by writing them and analyzing more complex ones, for different <code class="language-plaintext highlighter-rouge">kind:</code> objects.</ul></div><div class="post-tail-wrapper text-muted"><div class="post-meta mb-3"> <i class="far fa-folder-open fa-fw mr-1"></i> <a href='/blog/categories/devsecops/'>DevSecOps</a>, <a href='/blog/categories/kubernetes/'>Kubernetes</a></div><div class="post-tags"> <i class="fa fa-tags fa-fw mr-1"></i> <a href="/blog/tags/devsecops/" class="post-tag no-text-decoration" >devsecops</a> <a href="/blog/tags/kubernetes/" class="post-tag no-text-decoration" >kubernetes</a> <a href="/blog/tags/containers/" class="post-tag no-text-decoration" >containers</a></div><div class="post-tail-bottom d-flex justify-content-between align-items-center mt-3 pt-5 pb-2"><div class="license-wrapper"> This post is licensed under <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a> by the author.</div><div class="share-wrapper"> <span class="share-label text-muted mr-1">Share</span> <span class="share-icons"> <a href="https://twitter.com/intent/tweet?text=Basics of Kubernetes (Hands-On Experience) - Cloufish's Blog&url=https://cloufish.github.io/blog/posts/Kubernetes-Basics-Hands-On/" data-toggle="tooltip" data-placement="top" title="Twitter" target="_blank" rel="noopener" aria-label="Twitter"> <i class="fa-fw fab fa-twitter"></i> </a> <a href="https://www.facebook.com/sharer/sharer.php?title=Basics of Kubernetes (Hands-On Experience) - Cloufish's Blog&u=https://cloufish.github.io/blog/posts/Kubernetes-Basics-Hands-On/" data-toggle="tooltip" data-placement="top" title="Facebook" target="_blank" rel="noopener" aria-label="Facebook"> <i class="fa-fw fab fa-facebook-square"></i> </a> <a href="https://telegram.me/share?text=Basics of Kubernetes (Hands-On Experience) - Cloufish's Blog&url=https://cloufish.github.io/blog/posts/Kubernetes-Basics-Hands-On/" data-toggle="tooltip" data-placement="top" title="Telegram" target="_blank" rel="noopener" aria-label="Telegram"> <i class="fa-fw fab fa-telegram"></i> </a> <i class="fa-fw fas fa-link small" onclick="copyLink()" data-toggle="tooltip" data-placement="top" title="Copy link"></i> </span></div></div></div></div></div><div id="panel-wrapper" class="col-xl-3 pl-2 text-muted topbar-down"><div class="access"><div id="access-lastmod" class="post"> <span>Recent Update</span><ul class="post-content pl-0 pb-1 ml-1 mt-2"><li><a href="/blog/posts/Can-OWASP-ZAP-replace-Burp-Suite-Professional/">Can OWASP ZAP replace Burp Suite Professional?</a><li><a href="/blog/posts/OWASP-ZAP-as-a-great-fuzzing-tool/">OWASP-ZAP-Fuzzer is it a great alternative for Burp-Suite Intruder?</a><li><a href="/blog/posts/Setting-up-zap-scan-in-cicd-pipeline/">Setting up ZAP Scan in CI/CD pipeline</a><li><a href="/blog/posts/Setting-Up-Hashicorp-Vault-To-Manage-Github-Token/">Setting up Hashicorp Vault to manage our Github Token</a><li><a href="/blog/posts/Preventing-Insufficient-Logging-and-Monitoring/">Concept of Preventing Insufficient Logging & Monitoring</a></ul></div><div id="access-tags"> <span>Trending Tags</span><div class="d-flex flex-wrap mt-3 mb-1 mr-3"> <a class="post-tag" href="/blog/tags/devsecops/">devsecops</a> <a class="post-tag" href="/blog/tags/beginner/">beginner</a> <a class="post-tag" href="/blog/tags/containers/">containers</a> <a class="post-tag" href="/blog/tags/docker/">docker</a> <a class="post-tag" href="/blog/tags/blog/">blog</a> <a class="post-tag" href="/blog/tags/cms/">cms</a> <a class="post-tag" href="/blog/tags/kubernetes/">kubernetes</a> <a class="post-tag" href="/blog/tags/owasp/">owasp</a> <a class="post-tag" href="/blog/tags/pentesting-lab/">pentesting lab</a> <a class="post-tag" href="/blog/tags/zaproxy/">zaproxy</a></div></div></div><script src="https://cdn.jsdelivr.net/gh/afeld/bootstrap-toc@1.0.1/dist/bootstrap-toc.min.js"></script><div id="toc-wrapper" class="pl-0 pr-4 mb-5"> <span class="pl-3 pt-2 mb-2">Contents</span><nav id="toc" data-toggle="toc"></nav></div></div></div><div class="row"><div class="col-12 col-lg-11 col-xl-8"><div id="post-extend-wrapper" class="pl-1 pr-1 pl-sm-2 pr-sm-2 pl-md-4 pr-md-4"><div id="related-posts" class="mt-5 mb-2 mb-sm-4"><h3 class="pt-2 mt-1 mb-4 ml-1" data-toc-skip>Further Reading</h3><div class="card-deck mb-4"><div class="card"> <a href="/blog/posts/Basics-Of-Kubernetes/"><div class="card-body"> <span class="timeago small" > May 3 <i class="unloaded">2021-05-03T07:46:00+02:00</i> </span><h3 class="pt-0 mt-1 mb-3" data-toc-skip>Basics of Kubernetes (Without Hands-on Practice)</h3><div class="text-muted small"><p> Intro: What I want you to know already: What are containers - I recommend this course -&gt; freeCodeCamp Docker How to create them in Dockerfiles, for that I recommend blackarch-zsh blog-post ...</p></div></div></a></div><div class="card"> <a href="/blog/posts/Kubernetes-Basics-Hands-On-Part-2/"><div class="card-body"> <span class="timeago small" > May 24 <i class="unloaded">2021-05-24T07:46:00+02:00</i> </span><h3 class="pt-0 mt-1 mb-3" data-toc-skip>Basics of Kubernetes Part 2</h3><div class="text-muted small"><p> Connecting to the Pod/App. We know from previous blog-post, that because Pods are disappearing, redeployed all the time we can’t directly connect to them via IP - these are changing constantly. W...</p></div></div></a></div><div class="card"> <a href="/blog/posts/Security-Of-Docker-Containers/"><div class="card-body"> <span class="timeago small" > May 17 <i class="unloaded">2021-05-17T07:46:00+02:00</i> </span><h3 class="pt-0 mt-1 mb-3" data-toc-skip>Security of Docker Containers</h3><div class="text-muted small"><p> Intro The use of Docker Containers has changed completely on how we deploy our applications, many though think that all the apps running in the container are completely isolated from the host syst...</p></div></div></a></div></div></div><div class="post-navigation d-flex justify-content-between"> <a href="/blog/posts/Basics-Of-Kubernetes/" class="btn btn-outline-primary" prompt="Older"><p>Basics of Kubernetes (Without Hands-on Practice)</p></a> <a href="/blog/posts/Security-Of-Docker-Containers/" class="btn btn-outline-primary" prompt="Newer"><p>Security of Docker Containers</p></a></div></div></div></div><footer class="d-flex w-100 justify-content-center"><div class="d-flex justify-content-between align-items-center"><div class="footer-left"><p class="mb-0"> © 2021 <a href="https://twitter.com/cloufisz">Bartholomew Mokrzycki</a>. <span data-toggle="tooltip" data-placement="top" title="Except where otherwise noted, the blog posts on this site are licensed under the Creative Commons Attribution 4.0 International (CC BY 4.0) License by the author.">Some rights reserved.</span></p></div><div class="footer-right"><p class="mb-0"> Powered by <a href="https://jekyllrb.com" target="_blank" rel="noopener">Jekyll</a> with <a href="https://github.com/cotes2020/jekyll-theme-chirpy" target="_blank" rel="noopener">Chirpy</a> theme.</p></div></div></footer></div><div id="search-result-wrapper" class="d-flex justify-content-center unloaded"><div class="col-12 col-sm-11 post-content"><div id="search-hints"><h4 class="text-muted mb-4">Trending Tags</h4><a class="post-tag" href="/blog/tags/devsecops/">devsecops</a> <a class="post-tag" href="/blog/tags/beginner/">beginner</a> <a class="post-tag" href="/blog/tags/containers/">containers</a> <a class="post-tag" href="/blog/tags/docker/">docker</a> <a class="post-tag" href="/blog/tags/blog/">blog</a> <a class="post-tag" href="/blog/tags/cms/">cms</a> <a class="post-tag" href="/blog/tags/kubernetes/">kubernetes</a> <a class="post-tag" href="/blog/tags/owasp/">owasp</a> <a class="post-tag" href="/blog/tags/pentesting-lab/">pentesting lab</a> <a class="post-tag" href="/blog/tags/zaproxy/">zaproxy</a></div><div id="search-results" class="d-flex flex-wrap justify-content-center text-muted mt-3"></div></div></div></div><div id="mask"></div><a id="back-to-top" href="#" aria-label="back-to-top" class="btn btn-lg btn-box-shadow" role="button"> <i class="fas fa-angle-up"></i> </a> <script src="https://cdn.jsdelivr.net/npm/simple-jekyll-search@1.7.3/dest/simple-jekyll-search.min.js"></script> <script> SimpleJekyllSearch({ searchInput: document.getElementById('search-input'), resultsContainer: document.getElementById('search-results'), json: '/blog/assets/js/data/search.json', searchResultTemplate: '<div class="pl-1 pr-1 pl-sm-2 pr-sm-2 pl-lg-4 pr-lg-4 pl-xl-0 pr-xl-0"> <a href="https://cloufish.github.io{url}">{title}</a><div class="post-meta d-flex flex-column flex-sm-row text-muted mt-1 mb-1"> {categories} {tags}</div><p>{snippet}</p></div>', noResultsText: '<p class="mt-5">Oops! No result founds.</p>', templateMiddleware: function(prop, value, template) { if (prop === 'categories') { if (value === '') { return `${value}`; } else { return `<div class="mr-sm-4"><i class="far fa-folder fa-fw"></i>${value}</div>`; } } if (prop === 'tags') { if (value === '') { return `${value}`; } else { return `<div><i class="fa fa-tag fa-fw"></i>${value}</div>`; } } } }); </script>

